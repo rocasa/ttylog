@@ -1,0 +1,15 @@
+ttylog (0.1.a-2) unstable; urgency=low
+
+  * fflushed output
+
+ -- Tibor Koleszar <oldw@debian.org>  Thu,  6 Jan 2000 15:43:19 +0200
+
+ttylog (0.1.a-1) unstable; urgency=low
+
+  * Initial release.
+
+ -- Tibor Koleszar <oldw@debian.org>  Fri,  4 Jun 1999 10:20:26 +0200
+
+Local variables:
+mode: debian-changelog
+End:

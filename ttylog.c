@@ -138,6 +138,7 @@ main (int argc, char *argv[])
 	  logdate = time (NULL);
 	  logdate_s = localtime (&logdate);
 	  printf ("%s\n", line);
+	  fflush(stdout);
 	}
     }
 
