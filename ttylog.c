@@ -59,7 +59,7 @@ main (int argc, char *argv[])
 
       if (!strcmp (argv[i], "-h") || !strcmp (argv[i], "--help"))
 	{
-	  printf ("ttylog verison %s. Programmed by Tibor Koleszar <oldw@debian.org>\n", VERSION);
+	  printf ("ttylog version %s. Programmed by Tibor Koleszar <oldw@debian.org>\n", VERSION);
 	  printf ("Usage: \n -h, --help	This help\n -v, --version	Version number\n");
 	  printf (" -b, --baud	Baud rate\n -d, --device	Serial device (eg. /dev/ttyS1)\n");
 	  exit (0);
