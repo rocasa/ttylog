@@ -1,3 +1,10 @@
+ttylog (0.1.a-3) unstable; urgency=low
+
+  * New Standards-Version (3.1.1)
+  * Changed typo at ttylog -h (verison -> version)
+
+ -- Tibor Koleszar <oldw@debian.org>  Thu,  2 Jan 2001 14:22:32 +0200
+
 ttylog (0.1.a-2) unstable; urgency=low
 
   * fflushed output
