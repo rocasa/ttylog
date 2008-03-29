@@ -1,3 +1,13 @@
+ttylog (0.1.b-4) unstable; urgency=low
+
+  * QA Group upload orphaning this package
+  * Rebuild to complete /usr/doc transition (closes: #359592)
+  * debian/rules: bumped debhelper compatibility level to 4
+  * debian/copyright: updated address of the FSF
+  * debian/copyright: included location of the full text of the GPL
+
+ -- Andrew Pollock <apollock@debian.org>  Mon, 17 Apr 2006 21:43:47 -0700
+
 ttylog (0.1.b-3) unstable; urgency=low
 
   * Using optional output flush - Closes: bug#164778
