@@ -12,7 +12,7 @@ ttylog (0.1.c-1) unstable; urgency=low
   * Reword description and add Homepage to debian/control.
   * Add debian/watch file.
 
- -- Robert James Clay <jame@mail.rocasa.org>  Sat, 26 Jul 2008 20:56:58 -0400
+ -- Robert James Clay <jame@rocasa.org>  Sat, 26 Jul 2008 20:56:58 -0400
 
 ttylog (0.1.b-4) unstable; urgency=low
 
