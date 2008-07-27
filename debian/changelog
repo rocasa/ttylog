@@ -1,16 +1,18 @@
 ttylog (0.1.c-1) unstable; urgency=low
 
   * New Maintainer (closes: #358515)
-  * Added support for 4800 baud (Closes: #203356)
-  * Remove unneeded printf for flushed option. (Closes: #267872)
-  * Change ICRNL to IGNCR for connection setup. (Closes: #280629)
-  * Remove del1013() and other unused code (Closes: #271098)
-  * Fix nostrip build issue. (Closes: #438226)
+  * New upstream release:
+    - Added support for 4800 baud (Closes: #203356)
+    - Remove unneeded printf for flushed option. (Closes: #267872)
+    - Change ICRNL to IGNCR for connection setup. (Closes: #280629)
+    - Remove del1013() and other unused code (Closes: #271098)
+    - Fix nostrip build issue. (Closes: #438226)
   * Set debhelper compatibility level to 5
   * Set Standards Version to 3.8.0
   * Reword description and add Homepage to debian/control.
+  * Add debian/watch file.
 
- -- Robert James Clay <jame@rocasa.org>  Thu, 10 Jul 2008 14:21:51 -0400
+ -- Robert James Clay <jame@rocasa.org>  Sat, 26 Jul 2008 20:56:58 -0400
 
 ttylog (0.1.b-4) unstable; urgency=low
 
