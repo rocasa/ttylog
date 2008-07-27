@@ -1,0 +1,8 @@
+# ttylog watch control file for uscan
+
+# Compulsory line, this is a version 3 file
+version=3
+
+# Check the ttylog directory at ftn.rocasa.us for new versions
+http://ftn.rocasa.us/files/apps/debian/ttylog/ttylog_(.+)\.tar\.gz
+
