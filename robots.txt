@@ -1,0 +1,6 @@
+#robots.txt for ttylog.sourceforge.net
+
+User-agent: *
+Disallow: /cgi-bin
+
+
