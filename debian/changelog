@@ -1,3 +1,11 @@
+ttylog (0.1.c-2) UNRELEASED; urgency=low
+
+  * Add Vcs-Svn & Vcs-Browser to debian/control.
+  * Change homepage in debian/control to Sourceforge project site.
+  * Changed debian/watch to point to Sourceforge.
+
+ -- Robert James Clay <jame@rocasa.org>  Sat, 06 Dec 2008 19:57:28 -0500
+
 ttylog (0.1.c-1) unstable; urgency=low
 
   * New Maintainer (closes: #358515)
