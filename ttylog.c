@@ -7,7 +7,7 @@
 #include <sys/types.h>
 #include <fcntl.h>
 
-#define VERSION "0.1.c"
+#define VERSION "0.1.d"
 #define BAUDN 9
 
 char flush = 0;

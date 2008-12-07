@@ -1,3 +1,9 @@
+ttylog (0.1.d-1) UNRELEASED; urgency=low
+
+  * Changes for v0.1.d-1.
+
+ -- Robert James Clay <jame@rocasa.org>  Sat, 06 Dec 2008 21:24:47 -0500
+
 ttylog (0.1.c-2) UNRELEASED; urgency=low
 
   * Add Vcs-Svn & Vcs-Browser to debian/control.
