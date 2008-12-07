@@ -4,6 +4,8 @@ Priority: extra
 Maintainer: Robert James Clay <jame@rocasa.org>
 Build-Depends: debhelper (>= 5)
 Standards-Version: 3.8.0
+Vcs-Svn: https://ttylog.svn.sourceforge.net/svnroot/ttylog
+Vcs-Browser: http://ttylog.svn.sourceforge.net/viewvc/ttylog
 Homepage: http://ttylog.sourceforge.net
 
 Package: ttylog
