@@ -1,6 +1,7 @@
 
  ttylog - TTY logger
  Copyright (C) 2000-2002 Tibor Koleszar <oldw@debian.org>
+ Copyright 2008 Robert James Clay <jame@rocasa.org>
 
  This program is free software; you can redistribute it and/or
  modify it under the terms of the GNU General Public License
@@ -18,3 +19,6 @@
 
  Tibor Koleszar <oldw@debian.org>
  H-7400 Kaposvar, Somssich Pal str. 4.
+
+ Robert James Clay <jame@rocasa.org>
+ 
