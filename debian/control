@@ -1,0 +1,14 @@
+Source: ttylog
+Section: utils
+Priority: extra
+Maintainer: Tibor Koleszar <oldw@debian.org>
+Build-Depends: debhelper (>> 3.0.0)
+Standards-Version: 3.5.2
+
+Package: ttylog
+Architecture: any
+Depends: ${shlibs:Depends}
+Description: serial port logger
+ Print everything onto stdout what comes from a
+ serial device. You can specify the device and the
+ baud rate.
