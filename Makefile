@@ -1,5 +1,5 @@
 CC = gcc
-C_ARGS = -Wall -O2
+C_ARGS = -Wall -g -O2
 INS = /usr/bin/install
 GZIP = /bin/gzip
 
@@ -15,5 +15,5 @@ clean:
 		rm -f *.o ttylog core *~
 
 install: ttylog
-	$(INS) -o root -g root -m 0755 -s ttylog $(DESTDIR)/usr/sbin
+	$(INS) -o root -g root -m 0755 ttylog $(DESTDIR)/usr/sbin
 	$(INS) -o root -g root -m 0444 ttylog.8 $(DESTDIR)/usr/share/man/man8
