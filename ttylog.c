@@ -12,6 +12,8 @@
 #define VERSION "0.1.a"
 #define BAUDN 8
 
+char flush = 0;
+
 char *BAUD_T[] =
 {"300", "1200", "2400", "9600", "19200", "38400", "57600", "115200"};
 
@@ -47,6 +49,7 @@ main (int argc, char *argv[])
   struct termios oldtio, newtio;
 
 
+  modem_device[0] = 0;
 
   if (argc < 2)
     {
@@ -61,7 +64,7 @@ main (int argc, char *argv[])
 	{
 	  printf ("ttylog version %s. Programmed by Tibor Koleszar <oldw@debian.org>\n", VERSION);
 	  printf ("Usage: \n -h, --help	This help\n -v, --version	Version number\n");
-	  printf (" -b, --baud	Baud rate\n -d, --device	Serial device (eg. /dev/ttyS1)\n");
+	  printf (" -b, --baud	Baud rate\n -d, --device	Serial device (eg. /dev/ttyS1)\n -f, --flush	Flush output\n");
 	  exit (0);
 	}
 
@@ -70,6 +73,12 @@ main (int argc, char *argv[])
 	  printf ("ttylog verison %s.\n", VERSION);
 	  exit (0);
 	}
+
+      if (!strcmp (argv[i], "-f") || !strcmp (argv[i], "--flush"))
+	{
+	  flush = 1;
+	}
+
 
       if (!strcmp (argv[i], "-b") || !strcmp (argv[i], "--baud"))
 	{
@@ -99,6 +108,11 @@ main (int argc, char *argv[])
 
 
     }
+
+  if (!strlen(modem_device)) {
+    printf ("%s: no device is set. Use %s -h for more information.\n", argv[0], argv[0]);
+    exit (0);
+  }
 
 
   logfile = fopen (modem_device, "rb");
@@ -138,7 +152,7 @@ main (int argc, char *argv[])
 	  logdate = time (NULL);
 	  logdate_s = localtime (&logdate);
 	  printf ("%s\n", line);
-	  fflush(stdout);
+	  if (flush) { fflush(stdout); printf("flushed.");}
 	}
     }
 
