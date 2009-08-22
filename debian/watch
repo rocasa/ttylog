@@ -1,0 +1,8 @@
+# ttylog watch control file for uscan
+
+# Compulsory line, this is a version 3 file
+version=3
+
+# Check at sourceforge for new ttylog versions,
+# for devscripts >= 2.9
+http://sf.net/ttylog/ttylog-(.*)\.tar\.gz
