@@ -68,7 +68,7 @@ main (int argc, char *argv[])
 
       if (!strcmp (argv[i], "-v") || !strcmp (argv[i], "--version"))
 	{
-	  printf ("ttylog verison %s.\n", VERSION);
+	  printf ("ttylog version %s.\n", VERSION);
 	  exit (0);
 	}
 
