@@ -1,6 +1,0 @@
-ttylog for Debian
-----------------------
-
-Print everything onto stdout comes from a serial device.
-
-Tibor Koleszar <oldw@debian.org>, Fri,  4 Jun 1999 10:20:26 +0200
