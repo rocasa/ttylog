@@ -25,3 +25,12 @@ License:
 On Debian systems, the full text of the GPL can be found at
 /usr/share/common-licenses/GPL-2
 
+
+# The license for the Debian packaging is GPL-2, see above, and the 
+Copyright is as follows:
+
+   Copyright 1999-2002 Tibor Koleszar <oldw@debian.org>
+   Copyright   2006    Andrew Pollock <apollock@debian.org>
+   Copyright 2008-2010 Robert James Clay <jame@rocasa.us>
+
+
