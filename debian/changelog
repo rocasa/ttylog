@@ -2,9 +2,10 @@ ttylog (0.1.c-2) UNRELEASED; urgency=low
 
   * Add Vcs-Git & Vcs-Browser to debian/control. (Closes: #566938)
   * Change homepage in debian/control to Sourceforge project site.
+  * Change Maintainer email address to jame@rocasa.us
   * Changed debian/watch to point to Sourceforge. 
 
- -- Robert James Clay <jame@rocasa.org>  Tue, 26 Jan 2010 17:56:30 -0500
+ -- Robert James Clay <jame@rocasa.us>  Tue, 23 Mar 2010 06:07:57 -0400
 
 ttylog (0.1.c-1) unstable; urgency=low
 

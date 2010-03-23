@@ -1,7 +1,7 @@
 Source: ttylog
 Section: utils
 Priority: extra
-Maintainer: Robert James Clay <jame@rocasa.org>
+Maintainer: Robert James Clay <jame@rocasa.us>
 Build-Depends: debhelper (>= 5)
 Standards-Version: 3.8.0
 Vcs-Git: git://ttylog.git.sourceforge.net/gitroot/ttylog/ttylog.git
