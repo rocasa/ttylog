@@ -1,12 +1,13 @@
-ttylog (0.1.c-2) UNRELEASED; urgency=low
+ttylog (0.1.d-1) UNRELEASED; urgency=low
 
+  * New upstream release.
   * Add Vcs-Git & Vcs-Browser to debian/control. (Closes: #566938)
   * Change homepage in debian/control to Sourceforge project site.
   * Detailed the Debian packaging copyright in debian/copyright.
-  * Change Maintainer email address to jame@rocasa.us
+  * Change Maintainer email address to jame@rocasa.us.
   * Changed debian/watch to point to Sourceforge. 
 
- -- Robert James Clay <jame@rocasa.us>  Tue, 23 Mar 2010 06:49:37 -0400
+ -- Robert James Clay <jame@rocasa.us>  Mon, 14 Feb 2011 18:09:37 -0400
 
 ttylog (0.1.c-1) unstable; urgency=low
 
