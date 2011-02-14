@@ -1,0 +1,48 @@
+2010-03-23  Robert James Clay <jame@rocasa.us>  0.1.d
+
+    * Corrected a misspelling of the word 'version' in ttylog.c.
+    * Change to using jame@rocasa.us for my email address.
+    * Corrected the FSF mailing address in the COPYRIGHT file.
+    * Derived this ttylog ChangeLog from debian/changelog, which is where
+      all changes were being noted previously.
+
+
+2008-06-26  Robert James Clay <jame@rocasa.org>  0.1.c
+
+    * Added support for 4800 baud (Closes: Debian bug#203356)
+    * Remove unneeded printf for flushed option. (Closes: Debian bug#267872)
+    * Change ICRNL to IGNCR for connection setup. (Closes: Debian bug#280629)
+    * Remove del1013() and other unused code (Closes: Debian bug#271098)
+    * Fix nostrip build issue. (Closes: bug#438226)
+
+
+2008-11-2002  Tibor Koleszar <oldw@debian.org>  0.1.b-3
+
+    * Using optional output flush - Closes: Debian bug#164778
+
+   
+2002-01-12  Tibor Koleszar <oldw@debian.org>  0.1.b-2
+
+    * Its not a debian native package - Closes: Debian bug#127498 
+   
+
+2002-01-12  Tibor Koleszar <oldw@debian.org>  0.1.b-1
+
+    * Removed binary files from upstream - Closes: Debian bug#127496
+    * Added COPYRIGHT and LICENCE files - Closes: Debian bug#127499
+   
+
+2001-01-02  Tibor Koleszar <oldw@debian.org>  0.1.a-3
+
+    * Changed typo at Tibor Koleszar <oldw@debian.org> -h (verison -> version)
+
+
+2000-01-06  Tibor Koleszar <oldw@debian.org>  0.1.a-2
+
+    * fflushed output
+
+
+1999-06-04  Tibor Koleszar <oldw@debian.org>  0.1.a-1
+
+    * Initial release.
+
