@@ -1,8 +1,9 @@
-2010-03-23  Robert James Clay <jame@rocasa.us>  0.1.d
+2011-02-16  Robert James Clay <jame@rocasa.us>  0.1.d
 
     * Corrected a misspelling of the word 'version' in ttylog.c.
     * Change to using jame@rocasa.us for my email address.
     * Corrected the FSF mailing address in the COPYRIGHT file.
+    * Explicitly noted copyright information at beginning of ttylog.c.
     * Derived this ttylog ChangeLog from debian/changelog, which is where
       all changes were being noted previously.
 
