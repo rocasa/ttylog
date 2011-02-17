@@ -1,4 +1,4 @@
-ttylog (0.1.d-1~1) UNRELEASED; urgency=low
+ttylog (0.1.d-1~2) UNRELEASED; urgency=low
 
   * New upstream release.
   * Set debhelper Build-Depends to version 7.
@@ -10,7 +10,7 @@ ttylog (0.1.d-1~1) UNRELEASED; urgency=low
   * Change Maintainer email address to jame@rocasa.us.
   * Changed debian/watch to point to Sourceforge. 
 
- -- Robert James Clay <jame@rocasa.us>  Wed, 16 Feb 2011 17:04:37 -0400
+ -- Robert James Clay <jame@rocasa.us>  Thu, 17 Feb 2011 16:55:17 -0400
 
 ttylog (0.1.c-1) unstable; urgency=low
 
