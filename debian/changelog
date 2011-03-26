@@ -1,17 +1,17 @@
-ttylog (0.1.d-1~2) UNRELEASED; urgency=low
+ttylog (0.1.d-1) unstable; urgency=low
 
   * New upstream release.
   * Set debhelper Build-Depends to version 7.
-  * Set Standards Version to 3.9.1; no changes neccessary.
-  * Changed to using dh_prep in the install target of debian/rules.
-  * Add Vcs-Git & Vcs-Browser to debian/control. (Closes: #566938)
-  * Change homepage in debian/control to Sourceforge project site.
-  * Detailed the Debian packaging copyright in debian/copyright.
   * Explicitly set Debian package format as 1.0.
-  * Change Maintainer email address to jame@rocasa.us.
   * Changed debian/watch to point to Sourceforge. 
-
- -- Robert James Clay <jame@rocasa.us>  Thu, 17 Feb 2011 16:55:17 -0400
+  * Change Maintainer email address to jame@rocasa.us.
+  * Set Standards Version to 3.9.1; no changes necessary.
+  * Detailed the Debian packaging copyright in debian/copyright.
+  * Change homepage in debian/control to Sourceforge project site.
+  * Add Vcs-Git & Vcs-Browser to debian/control. (Closes: #566938)
+  * Changed to using dh_prep in the install target of debian/rules.
+ 
+ -- Robert James Clay <jame@rocasa.us>  Sat, 26 Mar 2011 14:15:39 -0400
 
 ttylog (0.1.c-1) unstable; urgency=low
 
