@@ -3,7 +3,7 @@ Section: utils
 Priority: extra
 Maintainer: Robert James Clay <jame@rocasa.us>
 Build-Depends: debhelper (>= 8)
-Standards-Version: 3.9.2
+Standards-Version: 3.9.3
 Vcs-Git: git://git.code.sf.net/p/ttylog/code
 Vcs-Browser: http://sourceforge.net/p/ttylog/code/
 Homepage: http://ttylog.sourceforge.net
