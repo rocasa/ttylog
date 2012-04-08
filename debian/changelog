@@ -1,12 +1,13 @@
-ttylog (0.1.d-2~1) UNRELEASED; urgency=low
+ttylog (0.1.d-2~2) UNRELEASED; urgency=low
 
   * Set debhelper compatibility to 8.
   * Set debhelper Build-Depends to version 8.
-  * Set Standards Version to 3.9.2; no changes necessary.
-  * Explicitly set Debian package format as 3.0 (quilt).
-  * Changed to using a minimal version of debian/rules.
+  * Set Standards Version in debian/control to 3.9.3.
+  * Rewrite debian/copyright in accordance with DEP-5.
+  * Explicitly set Debian source format as 3.0 (quilt).
+  * Changed to using dh and a minimal version of debian/rules.
 
- -- Robert James Clay <jame@rocasa.us>  Mon, 26 Dec 2011 11:34:42 -0500
+ -- Robert James Clay <jame@rocasa.us>  Sun,  8 Apr 2012 09:20:21 -0500
 
 ttylog (0.1.d-1) unstable; urgency=low
 
