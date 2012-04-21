@@ -19,7 +19,6 @@ Description: serial port logger
 Package: ttylog-dbg
 Architecture: any
 Section: debug
-Priority: extra
 Depends: ttylog (= ${binary:Version}), ${misc:Depends}
 Description: debugging symbols for ttylog
  Print everything to stdout that comes from a
