@@ -1,4 +1,4 @@
-ttylog (0.1.d-2~2) UNRELEASED; urgency=low
+ttylog (0.1.d-2~3) UNRELEASED; urgency=low
 
   * Set debhelper compatibility to 8.
   * Set debhelper Build-Depends to version 8.
@@ -6,8 +6,10 @@ ttylog (0.1.d-2~2) UNRELEASED; urgency=low
   * Rewrite debian/copyright in accordance with DEP-5.
   * Explicitly set Debian source format as 3.0 (quilt).
   * Changed to using dh and a minimal version of debian/rules.
+  * Update the Vcs-Git & Vcs-Browser fields in debian/control.
+  * Add creation of a ttylog-dbg package to the package build.
 
- -- Robert James Clay <jame@rocasa.us>  Sun,  8 Apr 2012 09:20:21 -0500
+ -- Robert James Clay <jame@rocasa.us>  Sat, 21 Apr 2012 11:29:44 -0500
 
 ttylog (0.1.d-1) unstable; urgency=low
 
