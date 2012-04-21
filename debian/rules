@@ -4,7 +4,8 @@
 %:
 	dh $@
 
-
+override_dh_auto_install:
+	dh_auto_install --destdir=debian/ttylog
 
 override_dh_strip:
 	dh_strip --dbg-package=ttylog-dbg
