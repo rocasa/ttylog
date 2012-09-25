@@ -25,7 +25,7 @@
 #include <sys/types.h>
 #include <fcntl.h>
 
-#define VERSION "0.1.d"
+#define VERSION "0.2.0"
 #define BAUDN 9
 
 char flush = 0;
