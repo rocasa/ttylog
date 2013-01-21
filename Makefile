@@ -1,5 +1,5 @@
 CC = gcc
-CFLAGS = -Wall -g -O2
+CFLAGS+= -Wall -g -O2
 INS = /usr/bin/install
 GZIP = /bin/gzip
 
