@@ -97,7 +97,8 @@ main (int argc, char *argv[])
 	{
 	  if (argv[i + 1] != NULL)
 	    {
-	      strcpy (modem_device, argv[i + 1]);
+	      memset (modem_device, '\0', sizeof(modem_device));
+	      strncpy (modem_device, argv[i + 1], sizeof(modem_device)-1);
 	    }
 	  else
 	    {
