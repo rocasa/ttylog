@@ -1,15 +1,15 @@
 CC = gcc
-C_ARGS = -Wall -g -O2
+CFLAGS = -Wall -g -O2
 INS = /usr/bin/install
 GZIP = /bin/gzip
 
 all:	ttylog
 
 ttylog:	ttylog.o
-		$(CC) $(C_ARGS) -o ttylog ttylog.o
+		$(CC) $(CFLAGS) -o ttylog ttylog.o
 
 ttylog.o:	ttylog.c
-		$(CC) $(C_ARGS) -c ttylog.c
+		$(CC) $(CFLAGS) -c ttylog.c
 
 clean: 
 		rm -f *.o ttylog core *~
