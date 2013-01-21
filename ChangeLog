@@ -1,10 +1,17 @@
-2013-mm-dd  Robert James Clay <jame@rocasa.us>  0.2.0
+2013-1-21  Robert James Clay <jame@rocasa.us>  0.1.f
 
-    * Start development for next version.
+    * Use standard variable CFLAGS instead of C_ARGS in the Makefile and change
+      how it is initially set there.
+    * Fix issue where ttylog did not test length of device. Bug # 553945 reported
+      in Debian regarding an issue where ttylog does not check the length of the
+      device name, which caused a segfault if the name was too long. Reference also
+      ttylog bug # 3.
+
 
 2012-09-25  Robert James Clay <jame@rocasa.us>  0.1.e
 
     * Add missing '-f' option information to ttylog man page.
+
 
 2011-02-16  Robert James Clay <jame@rocasa.us>  0.1.d
 
