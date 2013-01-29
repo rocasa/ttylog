@@ -1,4 +1,4 @@
-CC = gcc
+# Makefile for ttylog
 CFLAGS+= -Wall -g -O2
 INS = /usr/bin/install
 GZIP = /bin/gzip
@@ -6,10 +6,10 @@ GZIP = /bin/gzip
 all:	ttylog
 
 ttylog:	ttylog.o
-		$(CC) $(CFLAGS) -o ttylog ttylog.o
+		$(CC) $(LDFLAGS) -o ttylog ttylog.o
 
 ttylog.o:	ttylog.c
-		$(CC) $(CFLAGS) -c ttylog.c
+		$(CC) $(CPPFLAGS) $(CFLAGS) -c ttylog.c
 
 clean: 
 		rm -f *.o ttylog core *~
