@@ -1,3 +1,28 @@
+2013-1-29  Robert James Clay <jame@rocasa.us>  0.20.0
+
+    * Change the version numbering scheme to 'm.n.p'; where "m" is the major
+      version number, "n" is the minor version number, and "p" is a patch
+      version number. Set this version as v0.20.0, derived by mapping the old
+      versions to new minor versions starting from 0.1.0 and counting bug
+      fixes as separate minor versions. For details see ttylog bug # 5, which
+      this closes.
+
+
+2013-1-21  Robert James Clay <jame@rocasa.us>  0.1.f
+
+    * Use standard variable CFLAGS instead of C_ARGS in the Makefile and change
+      how it is initially set there.
+    * Fix issue where ttylog did not test length of device. Bug # 553945 reported
+      in Debian regarding an issue where ttylog does not check the length of the
+      device name, which caused a segfault if the name was too long. Reference also
+      ttylog bug # 3.
+
+
+2012-09-25  Robert James Clay <jame@rocasa.us>  0.1.e
+
+    * Add missing '-f' option information to ttylog man page.
+
+
 2011-02-16  Robert James Clay <jame@rocasa.us>  0.1.d
 
     * Corrected a misspelling of the word 'version' in ttylog.c.

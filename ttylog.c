@@ -1,6 +1,6 @@
 /* ttylog - serial port logger
  Copyright (C) 1999-2002  Tibor Koleszar
- Copyright (C) 2008-2011  Robert James Clay
+ Copyright (C) 2008-2013  Robert James Clay
 
  This program is free software; you can redistribute it and/or
  modify it under the terms of the GNU General Public License
@@ -25,7 +25,7 @@
 #include <sys/types.h>
 #include <fcntl.h>
 
-#define VERSION "0.1.d"
+#define VERSION "0.20.0"
 #define BAUDN 9
 
 char flush = 0;
@@ -97,7 +97,8 @@ main (int argc, char *argv[])
 	{
 	  if (argv[i + 1] != NULL)
 	    {
-	      strcpy (modem_device, argv[i + 1]);
+	      memset (modem_device, '\0', sizeof(modem_device));
+	      strncpy (modem_device, argv[i + 1], sizeof(modem_device)-1);
 	    }
 	  else
 	    {
