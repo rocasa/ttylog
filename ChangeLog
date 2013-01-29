@@ -1,6 +1,9 @@
 2013-1-29  Robert James Clay <jame@rocasa.us>  0.21
 
-    * Start development for next version, v0.21.
+    * Do not explicitly define the CC variable in the Makefile.
+    * Add the CPPFLAGS variable to object build line in the Makefile.
+    * Change CFLAGS to LDFLAGS in the executable build line in Makefile.
+
 
 2013-1-29  Robert James Clay <jame@rocasa.us>  0.20.0
 
