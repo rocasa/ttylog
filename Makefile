@@ -1,4 +1,4 @@
-CC = gcc
+# Makefile for ttylog
 CFLAGS+= -Wall -g -O2
 INS = /usr/bin/install
 GZIP = /bin/gzip
