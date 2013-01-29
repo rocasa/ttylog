@@ -1,3 +1,7 @@
+2013-1-dd  Robert James Clay <jame@rocasa.us>  0.20.0
+
+    * Do the version naming changes.
+
 2013-1-21  Robert James Clay <jame@rocasa.us>  0.1.f
 
     * Use standard variable CFLAGS instead of C_ARGS in the Makefile and change
