@@ -1,3 +1,11 @@
+ttylog (0.20.0-1) UNRELEASED; urgency=low
+
+  * New upstream release, including:
+    - Change in the ttylog version numbering scheme.
+    - Fix of issue where length of device is not tested (Closes: #553945).
+
+ -- Robert James Clay <jame@rocasa.us>  Tue, 29 Jan 2013 10:36:52 -0500
+
 ttylog (0.1.d-2) unstable; urgency=low
 
   * Set debhelper compatibility to 8.
