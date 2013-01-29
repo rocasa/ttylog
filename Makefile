@@ -9,7 +9,7 @@ ttylog:	ttylog.o
 		$(CC) $(LDFLAGS) -o ttylog ttylog.o
 
 ttylog.o:	ttylog.c
-		$(CC) $(CFLAGS) -c ttylog.c
+		$(CC) $(CPPFLAGS) $(CFLAGS) -c ttylog.c
 
 clean: 
 		rm -f *.o ttylog core *~
