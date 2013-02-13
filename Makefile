@@ -6,13 +6,13 @@ GZIP = /bin/gzip
 all:	ttylog
 
 ttylog:	ttylog.o
-		$(CC) $(LDFLAGS) -o ttylog ttylog.o
+	$(CC) $(LDFLAGS) -o ttylog ttylog.o
 
 ttylog.o:	ttylog.c
-		$(CC) $(CPPFLAGS) $(CFLAGS) -c ttylog.c
+	$(CC) $(CPPFLAGS) $(CFLAGS) -c ttylog.c
 
 clean: 
-		rm -f *.o ttylog core *~
+	rm -f *.o ttylog core *~
 
 install: ttylog
 	$(INS) -o root -g root -m 0755 ttylog $(DESTDIR)/usr/sbin
