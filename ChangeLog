@@ -1,3 +1,10 @@
+2013-2-13  Robert James Clay <jame@rocasa.us>  0.22
+
+    * Change the ttylog build system to use CMake.
+    * Add an INSTALL file with information about the CMake based build system.
+      Include the legacy Makefile as a separate section in the file.
+
+
 2013-1-29  Robert James Clay <jame@rocasa.us>  0.21
 
     * Do not explicitly define the CC variable in the Makefile.

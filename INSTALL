@@ -1,0 +1,55 @@
+How to build ttylog
+===================
+
+CMake is now the standard build system for ttylog; see the 'Legacy Makefile'
+section for information about an alternate way of doing the build and install.
+
+(1) Create a build directory for CMake to work in.
+
+    mkdir <ttylog build directory>
+    cd <ttylog build directory>
+
+
+(2) Run CMake to configure and create the build system files.
+
+    cmake [OPTIONS] <ttylog source directory>
+    -- OR --
+    ccmake <ttylog source directory>
+    -- OR --
+    cmake-gui <ttylog source directory>
+
+
+(3) On systems where Makefiles are used, then run:
+    make
+    sudo make install
+
+
+For more details on the options available as well as other information, see the
+CMake documentation.
+
+
+Legacy Makefile
+===============
+Note that if you do not have CMake available to you or do not wish to use it,
+see below for a copy of an example Makefile for ttylog; you can extract it to
+the ttylog source directory and use that instead.
+
+# Legacy Makefile for ttylog
+CFLAGS+= -Wall -g -O2
+INS = /usr/bin/install
+GZIP = /bin/gzip
+
+all:	ttylog
+
+ttylog:	ttylog.o
+	$(CC) $(LDFLAGS) -o ttylog ttylog.o
+
+ttylog.o:	ttylog.c
+	$(CC) $(CPPFLAGS) $(CFLAGS) -c ttylog.c
+
+clean: 
+	rm -f *.o ttylog core *~
+
+install: ttylog
+	$(INS) -o root -g root -m 0755 ttylog $(DESTDIR)/usr/sbin
+	$(INS) -o root -g root -m 0444 ttylog.8 $(DESTDIR)/usr/share/man/man8
