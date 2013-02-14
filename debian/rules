@@ -1,6 +1,9 @@
 #!/usr/bin/make -f
 # debian/rules for ttylog
 
+DPKG_EXPORT_BUILDFLAGS = 1
+include /usr/share/dpkg/buildflags.mk
+
 %:
 	dh $@
 
@@ -13,5 +16,4 @@ override_dh_installdocs:
 override_dh_strip:
 	dh_strip --dbg-package=ttylog-dbg
 
-	
 .PHONY: override_dh_strip
