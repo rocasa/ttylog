@@ -1,4 +1,4 @@
-ttylog (0.23-1~1) UNRELEASED; urgency=low
+ttylog (0.24-1~1) UNRELEASED; urgency=low
 
   * New upstream release, including:
     - Change to using CMake for the build system.
@@ -8,7 +8,7 @@ ttylog (0.23-1~1) UNRELEASED; urgency=low
   * Add inclusion of dpkg buildflags to debian/rules.
   * Add 'dpkg-dev (>= 1.16.1~)' to Build-Depends in debian/control.
 
- -- Robert James Clay <jame@rocasa.us>  Thu, 14 Feb 2013 09:48:27 -0500
+ -- Robert James Clay <jame@rocasa.us>  Thu, 14 Feb 2013 13:23:48 -0500
 
 ttylog (0.1.d-2) unstable; urgency=low
 
