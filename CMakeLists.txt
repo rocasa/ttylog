@@ -4,7 +4,7 @@ CMAKE_MINIMUM_REQUIRED(VERSION 2.6)
 
 # ######### General setup ##########
 INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR})
-set(CMAKE_C_FLAGS "-g -Wall -O2")
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -g -Wall -O2")
 
 # ########## ttylog executable ##########
 # Sources:
