@@ -1,3 +1,11 @@
+2013-2-14  Robert James Clay <jame@rocasa.us>  0.25
+
+    * ttylog.c: Corrections to the code adding a NULL to modem_device variable.
+
+    * CMakeLists.txt: Change CMAKE_C_FLAGS default settings to be Debug build
+      settings by adding them to CMAKE_C_FLAGS_DEBUG instead.
+
+
 2013-2-14  Robert James Clay <jame@rocasa.us>  0.24
 
     * ttylog.c: Cleanup of tabs and whitespace.
