@@ -25,7 +25,7 @@
 #include <sys/types.h>
 #include <fcntl.h>
 
-#define VERSION "0.23"
+#define VERSION "0.24"
 #define BAUDN 9
 
 char flush = 0;
@@ -46,7 +46,6 @@ main (int argc, char *argv[])
   char line[1024], modem_device[512];
   struct termios oldtio, newtio;
 
-
   modem_device[0] = 0;
 
   if (argc < 2)
@@ -59,67 +58,64 @@ main (int argc, char *argv[])
     {
 
       if (!strcmp (argv[i], "-h") || !strcmp (argv[i], "--help"))
-	{
-	  printf ("ttylog version %s. Programmed by Tibor Koleszar <oldw@debian.org>\n", VERSION);
-	  printf ("Usage: \n -h, --help	This help\n -v, --version	Version number\n");
-	  printf (" -b, --baud	Baud rate\n -d, --device	Serial device (eg. /dev/ttyS1)\n -f, --flush	Flush output\n");
-	  exit (0);
-	}
+        {
+          printf ("ttylog version %s. Programmed by Tibor Koleszar <oldw@debian.org>\n", VERSION);
+          printf ("Usage: \n -h, --help	This help\n -v, --version	Version number\n");
+          printf (" -b, --baud	Baud rate\n -d, --device	Serial device (eg. /dev/ttyS1)\n -f, --flush	Flush output\n");
+          exit (0);
+        }
 
       if (!strcmp (argv[i], "-v") || !strcmp (argv[i], "--version"))
-	{
-	  printf ("ttylog version %s.\n", VERSION);
-	  exit (0);
-	}
+        {
+          printf ("ttylog version %s.\n", VERSION);
+          exit (0);
+        }
 
       if (!strcmp (argv[i], "-f") || !strcmp (argv[i], "--flush"))
-	{
-	  flush = 1;
-	}
-
+        {
+          flush = 1;
+        }
 
       if (!strcmp (argv[i], "-b") || !strcmp (argv[i], "--baud"))
-	{
-	  if (argv[i + 1] != NULL)
-	    {
-	      for (j = 0; j < BAUDN; j++)
-		if (!strcmp (argv[i + 1], BAUD_T[j]))
-		  baud = j;
-	    }
-	  if (baud == -1)
-	    {
-	      printf ("%s: invalid baud rate %s\n", argv[0], argv[i + 1]);
-	      exit (0);
-	    }
-	}
+        {
+          if (argv[i + 1] != NULL)
+            {
+              for (j = 0; j < BAUDN; j++)
+                if (!strcmp (argv[i + 1], BAUD_T[j]))
+                baud = j;
+            }
+          if (baud == -1)
+            {
+              printf ("%s: invalid baud rate %s\n", argv[0], argv[i + 1]);
+              exit (0);
+            }
+        }
 
-      if (!strcmp (argv[i], "-d") || !strcmp (argv[i], "--device"))
-	{
-	  if (argv[i + 1] != NULL)
-	    {
-	      memset (modem_device, '\0', sizeof(modem_device));
-	      strncpy (modem_device, argv[i + 1], sizeof(modem_device)-1);
-	    }
-	  else
-	    {
-	    }
-	}
+    if (!strcmp (argv[i], "-d") || !strcmp (argv[i], "--device"))
+      {
+        if (argv[i + 1] != NULL)
+          {
+            memset (modem_device, '\0', sizeof(modem_device));
+            strncpy (modem_device, argv[i + 1], sizeof(modem_device)-1);
+            modem_device[n+1] = NULL;
+          }
+        else
+          {
+          }
+      }
 
-
-    }
+  }
 
   if (!strlen(modem_device)) {
     printf ("%s: no device is set. Use %s -h for more information.\n", argv[0], argv[0]);
     exit (0);
   }
 
-
   logfile = fopen (modem_device, "rb");
   if (logfile == NULL)
     {
       printf ("%s: invalid device %s\n", argv[0], modem_device);
       exit (0);
-
     }
   fd = fileno (logfile);
 
@@ -145,14 +141,15 @@ main (int argc, char *argv[])
       FD_SET (fd, &rfds);
       retval = select (fd + 1, &rfds, NULL, NULL, NULL);
       if (retval)
-	{
-	  fgets (line, 1024, logfile);
-	  printf ("%s\n", line);
-	  if (flush) { fflush(stdout); }
-	}
+        {
+          fgets (line, 1024, logfile);
+          printf ("%s\n", line);
+          if (flush) { fflush(stdout); }
+        }
     }
 
   fclose (logfile);
   tcsetattr (fd, TCSANOW, &oldtio);
   return 0;
+
 }
