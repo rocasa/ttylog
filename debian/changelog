@@ -1,4 +1,4 @@
-ttylog (0.22-1~1) UNRELEASED; urgency=low
+ttylog (0.23-1~1) UNRELEASED; urgency=low
 
   * New upstream release, including:
     - Change to using CMake for the build system.
@@ -6,7 +6,7 @@ ttylog (0.22-1~1) UNRELEASED; urgency=low
     - Fix of issue where the length of device was not being tested
       (Closes: #553945).
 
- -- Robert James Clay <jame@rocasa.us>  Wed, 13 Feb 2013 19:55:16 -0500
+ -- Robert James Clay <jame@rocasa.us>  Thu, 14 Feb 2013 08:27:19 -0500
 
 ttylog (0.1.d-2) unstable; urgency=low
 
