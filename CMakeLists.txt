@@ -6,7 +6,7 @@ CMAKE_MINIMUM_REQUIRED(VERSION 2.6)
 INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR})
 
 # ######### Build defaults ##########
-set(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} -g -Wall -O2")
+set(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} -Wall -O2")
 
 # ########## ttylog executable ##########
 # Sources:
