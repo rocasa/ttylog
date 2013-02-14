@@ -25,7 +25,7 @@
 #include <sys/types.h>
 #include <fcntl.h>
 
-#define VERSION "0.24"
+#define VERSION "0.25"
 #define BAUDN 9
 
 char flush = 0;
@@ -97,7 +97,7 @@ main (int argc, char *argv[])
           {
             memset (modem_device, '\0', sizeof(modem_device));
             strncpy (modem_device, argv[i + 1], sizeof(modem_device)-1);
-            modem_device[n+1] = NULL;
+            modem_device[i + 1] = '\0';
           }
         else
           {
