@@ -5,8 +5,10 @@ ttylog (0.23-1~1) UNRELEASED; urgency=low
     - Change in the ttylog version numbering scheme.
     - Fix of issue where the length of device was not being tested
       (Closes: #553945).
+  * Add inclusion of dpkg buildflags to debian/rules.
+  * Add 'dpkg-dev (>= 1.16.1~)' to Build-Depends in debian/control.
 
- -- Robert James Clay <jame@rocasa.us>  Thu, 14 Feb 2013 08:27:19 -0500
+ -- Robert James Clay <jame@rocasa.us>  Thu, 14 Feb 2013 09:48:27 -0500
 
 ttylog (0.1.d-2) unstable; urgency=low
 
