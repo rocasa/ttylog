@@ -1,3 +1,8 @@
+2013-2-14  Robert James Clay <jame@rocasa.us>  0.23
+
+    * Correct how CMAKE_C_FLAGS is getting set in CMakeLists.txt.
+
+
 2013-2-13  Robert James Clay <jame@rocasa.us>  0.22
 
     * Change the ttylog build system to use CMake.
