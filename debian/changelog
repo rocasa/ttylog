@@ -3,12 +3,17 @@ ttylog (0.25-1~1) UNRELEASED; urgency=low
   * New upstream release, including:
     - Change to using CMake for the build system.
     - Change in the ttylog version numbering scheme.
-    - Fix of issue where the length of device was not being tested
+    - Fix of issue where the length of the device was not being tested.
       (Closes: #553945).
-  * Add inclusion of dpkg buildflags to debian/rules.
-  * Add 'dpkg-dev (>= 1.16.1~)' to Build-Depends in debian/control.
+  * Changes to debian/rules:
+    - Add explicit use of dpkg buildflags.
+    - Add explicit updating of CFLAGS and CXXFLAGS variables.
+  * Update copyright years for Robert James Clay in debian/copyright.
+  * Changes to debian/control:
+    - Add 'dpkg-dev (>= 1.16.1~)' to Build-Depends.
+    - Add the package 'cmake' to Build-Depends.
 
- -- Robert James Clay <jame@rocasa.us>  Thu, 14 Feb 2013 15:33:48 -0500
+ -- Robert James Clay <jame@rocasa.us>  Fri, 10 May 2013 09:06:28 -0500
 
 ttylog (0.1.d-2) unstable; urgency=low
 
