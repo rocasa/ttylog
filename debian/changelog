@@ -1,4 +1,4 @@
-ttylog (0.25-1~1) UNRELEASED; urgency=low
+ttylog (0.25-1~2) UNRELEASED; urgency=low
 
   * New upstream release, including:
     - Change to using CMake for the build system.
@@ -10,10 +10,12 @@ ttylog (0.25-1~1) UNRELEASED; urgency=low
     - Add explicit updating of CFLAGS and CXXFLAGS variables.
   * Update copyright years for Robert James Clay in debian/copyright.
   * Changes to debian/control:
-    - Add 'dpkg-dev (>= 1.16.1~)' to Build-Depends.
+    - Set Standards-Version to 3.9.4.
     - Add the package 'cmake' to Build-Depends.
+    - Add 'dpkg-dev (>= 1.16.1~)' to Build-Depends.
+    - Add debian branch information to the Vcs-Git URL.
 
- -- Robert James Clay <jame@rocasa.us>  Fri, 10 May 2013 09:06:28 -0500
+ -- Robert James Clay <jame@rocasa.us>  Wed, 19 Jun 2013 20:06:28 -0500
 
 ttylog (0.1.d-2) unstable; urgency=low
 
