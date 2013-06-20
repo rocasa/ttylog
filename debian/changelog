@@ -1,4 +1,4 @@
-ttylog (0.25-1~2) UNRELEASED; urgency=low
+ttylog (0.25-1) unstable; urgency=low
 
   * New upstream release, including:
     - Change to using CMake for the build system.
@@ -15,7 +15,7 @@ ttylog (0.25-1~2) UNRELEASED; urgency=low
     - Add 'dpkg-dev (>= 1.16.1~)' to Build-Depends.
     - Add debian branch information to the Vcs-Git URL.
 
- -- Robert James Clay <jame@rocasa.us>  Wed, 19 Jun 2013 20:06:28 -0500
+ -- Robert James Clay <jame@rocasa.us>  Thu, 20 Jun 2013 15:45:29 -0400
 
 ttylog (0.1.d-2) unstable; urgency=low
 
