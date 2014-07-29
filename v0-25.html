@@ -1,10 +1,10 @@
 <html>
   <head>
-     <title>ttylog - v0.1.d</title>
+     <title>ttylog - v0.25</title>
      <meta name="author" content="Robert James Clay">
-     <meta name="keywords" CONTENT="tty log serial v0.1.d">
-     <meta http-equiv="KEYWORDS" CONTENT="tty log serial v0.1.d">
-     <meta name="description" CONTENT="Information about ttylog version v0.1.d.">
+     <meta name="keywords" CONTENT="tty log serial v0.25">
+     <meta http-equiv="KEYWORDS" CONTENT="tty log serial v0.25">
+     <meta name="description" CONTENT="Information about ttylog version v0.25.">
      <link rel="stylesheet" type="text/css" href="./screen.css" media="screen, tv, projection" title="Default" />
      <link rel="stylesheet" type="text/css" href="./print.css" media="print" />
   </head>
@@ -14,7 +14,7 @@
       <div class="Header">
        <h1 class="headerTitle" lang="en">ttylog</h1>
         <div class="headerSubTitle" title="Description of page">
-          v0.1.d Information
+          v0.25 Information
         </div>
       </div>
       <div class="subHeader">
@@ -38,30 +38,25 @@
 
         <div class="half noBorderOnLeft">
 
-        <p>Version <b>v0.1.d</b> was released in February of 2011.&nbsp;
+        <p>Version <b>v0.25</b> was released in February of 2013.&nbsp;
         </p>
 
         <table>
-            <tr><td>- Corrected a misspelling of the word 'version' in ttylog.c.</td></tr>
-            <tr><td>- Changed to using jame@rocasa.us for my email address.</td></tr>
-            <tr><td>- Corrected the FSF mailing address in the COPYRIGHT file.</td></tr>
-            <tr><td>- Explicitly noted copyright information at beginning of ttylog.c.</td></tr>
-            <tr><td>- Derived ttylog ChangeLog from the debian/changelog, which is where all changes were being noted previously.</td></tr>
+            <tr><td>- ttylog.c: Corrections to the code adding a NULL to modem_device variable.</td></tr>
+            <tr><td>- CMakeLists.txt: Change CMAKE_C_FLAGS default settings to be Debug build
+                      settings by adding them to CMAKE_C_FLAGS_DEBUG instead..</td></tr>
         </table>
 
         </div>
 
         <div class="half">
-        <u><b>v0.1.d</b> Availability</u>
+        <u><b>v0.25</b> Availability</u>
 
-          <li>Browse&nbsp;<a href="http://sourceforge.net/p/ttylog/code/?branch=ref%2F0.1.d">v0.1.d</a> in GIT repository.</li>
-          <li>Download source for version <a href="http://sourceforge.net/projects/ttylog/files/ttylog/0.1.d/ttylog-0.1.d.tar.gz/download">v0.1.d</a></li>
+          <li>Browse&nbsp;<a href="http://sourceforge.net/p/ttylog/code/ci/0.25/tree">v0.25</a> in GIT repository.</li>
+          <li>Download source for version <a href="http://sourceforge.net/projects/ttylog/files/ttylog/0.25/ttylog-0.25.tar.gz/download">v0.25</a></li>
 
 
         </ul>
-            <p class="filler"><!-- Filler para to extend left vertical line --></p>
-            <p class="filler"><!-- Filler para to extend left vertical line --></p>
-            <p class="filler"><!-- Filler para to extend left vertical line --></p>
             <p class="filler"><!-- Filler para to extend left vertical line --></p>
             <p class="filler"><!-- Filler para to extend left vertical line --></p>
             <p class="filler"><!-- Filler para to extend left vertical line --></p>
@@ -69,31 +64,34 @@
 
       </div>
 
-      <div class="rowOfBoxes dividingBorderAbove">  <!-- v0.1.d row -->
+      <div class="rowOfBoxes dividingBorderAbove">  <!-- v0.25 row -->
         <div class="half noBorderOnLeft">
-        <table><u><b>v0.1.d-1</b> Changelog</u>
-            <tr><td>- New upstream release.</tr></td>
-            <tr><td>- Set debhelper Build-Depends to version 7.</tr></td>
-            <tr><td>- Explicitly set Debian package format as 1.0.</tr></td>
-            <tr><td>- Changed debian/watch to point to Sourceforge.</tr></td>
-            <tr><td>- Change Maintainer email address to jame@rocasa.us.</tr></td>
-            <tr><td>- Set Standards Version to 3.9.1; no changes necessary.</tr></td>
-            <tr><td>- Detailed the Debian packaging copyright in debian/copyright.</tr></td>
-            <tr><td>- Change homepage in debian/control to Sourceforge project site.</tr></td>
-            <tr><td>- Add Vcs-Git & Vcs-Browser to debian/control. (Closes: <a href="http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=566938">#566938</a>)</tr></td>
-            <tr><td>- Changed to using dh_prep in the install target of debian/rules.</tr></td>
+        <table><u><b>v0.25-1</b> Changelog</u>
+            <tr><td>* New upstream release, including:</tr></td>
+            <tr><td>  - Change in the ttylog version numbering scheme.</tr></td>
+            <tr><td>  - Fix of issue where the length of the device was not being tested. (Closes: <a href="http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=553945">#553945</a>).</tr></td>
+            <tr><td>* Changes to debian/rules:</tr></td>
+            <tr><td>  - Add explicit use of dpkg buildflags.</tr></td>
+            <tr><td>  - Add explicit updating of CFLAGS and CXXFLAGS variables.</tr></td>
+            <tr><td>* Update copyright years for Robert James Clay in debian/copyright. </tr></td>
+            <tr><td>* Changes to debian/control:</tr></td>
+            <tr><td>  - Set Standards-Version to 3.9.4.</tr></td>
+            <tr><td>  - Add the package 'cmake' to Build-Depends.</tr></td>
+            <tr><td>  - Add 'dpkg-dev (>= 1.16.1~)' to Build-Depends.</tr></td>
+            <tr><td>  -  Add debian branch information to the Vcs-Git URL.</tr></td>
         </table>
 
         </div>
 
         <div class="half">
-        <u><b>v0.1.d-1</b> Availability</u>
-          <li>Browse&nbsp;<a href="http://sourceforge.net/p/ttylog/code/?branch=ref%2Fdebian%2F0.1.d-1">v0.1.d-1</a> in GIT repository.</li>
-          <li>Download source for version <a href="http://sourceforge.net/projects/ttylog/files/ttylog/0.1.d/">v0.1.d</a></li>
-          <li>Available in Debian v7 (<a href="http://packages.debian.org/source/wheezy/ttylog">Wheezy</a>).</li>
-          <li>Available in Ubuntu v11.10 (Ocelot).</li>
+        <u><b>v0.25-1</b> Availability</u>
+          <li>Browse&nbsp;<a href="http://sourceforge.net/p/ttylog/code/ci/debian/0.25-1/~/tree">v0.25-1</a> in GIT repository.</li>
+          <li>Download source for version <a href="http://sourceforge.net/projects/ttylog/files/ttylog/0.25/">v0.25</a></li>
+          <li>Available in Debian Testing (<a href="http://packages.debian.org/source/jessie/ttylog">Jessie</a>).</li>
+          <li>Available in Ubuntu v13.10 (Saucy), v14.04 (Precise).</li>
           <!-- <li>Browse&nbsp;<a href="http://ttylog.git.sourceforge.net/git/gitweb.cgi?p=ttylog/ttylog.git;a=tree;h=f67ad53aff690d213d173fc46eb03bab79ed5e45;hb=36735e18a9f3d60cc07a8eecfcb66b35922ec67d">v0.1.d-1</a> in GIT repository.</li> -->
         </ul>
+            <p class="filler"><!-- Filler para to extend left vertical line --></p>
             <p class="filler"><!-- Filler para to extend left vertical line --></p>
             <p class="filler"><!-- Filler para to extend left vertical line --></p>
             <p class="filler"><!-- Filler para to extend left vertical line --></p>
