@@ -1,3 +1,8 @@
+2014-7-29  Robert James Clay <jame@rocasa.us>
+
+    * ttylog.8: Rewrite the '-f --flush' option description in ttylog.8.
+
+
 2013-6-19  Robert James Clay <jame@rocasa.us>
 
     * README.md: Add initial version of the README.md file.
