@@ -59,9 +59,11 @@ main (int argc, char *argv[])
 
       if (!strcmp (argv[i], "-h") || !strcmp (argv[i], "--help"))
         {
-          printf ("ttylog version %s. Programmed by Tibor Koleszar <oldw@debian.org>\n", VERSION);
-          printf ("Usage: \n -h, --help	This help\n -v, --version	Version number\n");
-          printf (" -b, --baud	Baud rate\n -d, --device	Serial device (eg. /dev/ttyS1)\n -f, --flush	Flush output\n");
+          printf ("ttylog version %s\n", VERSION);
+          printf ("Usage:  ttylog [-b|--baud] [-d|--device] [-f|--flush] > /path/to/logfile\n");
+          printf (" -h, --help	This help\n -v, --version	Version number\n -b, --baud	Baud rate\n");
+          printf (" -d, --device	Serial device (eg. /dev/ttyS1)\n -f, --flush	Flush output\n");
+          printf ("ttylog home page: <http://ttylog.sourceforge.net/>\n\n");
           exit (0);
         }
 
