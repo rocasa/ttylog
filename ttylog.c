@@ -1,6 +1,6 @@
 /* ttylog - serial port logger
  Copyright (C) 1999-2002  Tibor Koleszar
- Copyright (C) 2008-2013  Robert James Clay
+ Copyright (C) 2008-2015  Robert James Clay
 
  This program is free software; you can redistribute it and/or
  modify it under the terms of the GNU General Public License
@@ -25,7 +25,7 @@
 #include <sys/types.h>
 #include <fcntl.h>
 
-#define VERSION "0.25"
+#define VERSION "0.26"
 #define BAUDN 9
 
 char flush = 0;
@@ -59,15 +59,22 @@ main (int argc, char *argv[])
 
       if (!strcmp (argv[i], "-h") || !strcmp (argv[i], "--help"))
         {
-          printf ("ttylog version %s. Programmed by Tibor Koleszar <oldw@debian.org>\n", VERSION);
-          printf ("Usage: \n -h, --help	This help\n -v, --version	Version number\n");
-          printf (" -b, --baud	Baud rate\n -d, --device	Serial device (eg. /dev/ttyS1)\n -f, --flush	Flush output\n");
+          printf ("ttylog version %s\n", VERSION);
+          printf ("Usage:  ttylog [-b|--baud] [-d|--device] [-f|--flush] > /path/to/logfile\n");
+          printf (" -h, --help	This help\n -v, --version	Version number\n -b, --baud	Baud rate\n");
+          printf (" -d, --device	Serial device (eg. /dev/ttyS1)\n -f, --flush	Flush output\n");
+          printf ("ttylog home page: <http://ttylog.sourceforge.net/>\n\n");
           exit (0);
         }
 
       if (!strcmp (argv[i], "-v") || !strcmp (argv[i], "--version"))
         {
-          printf ("ttylog version %s.\n", VERSION);
+          printf ("ttylog version %s\n", VERSION);
+          printf ("Copyright (C) 2015 Robert James Clay <jame@rocasa.us>\n");
+          printf ("Copyright (C) 2002 Tibor Koleszar <oldw@debian.org>\n");
+          printf ("License GPLv2+: <http://www.gnu.org/licenses/old-licenses/gpl-2.0.html>\n");
+          printf ("This is free software: you are free to change and redistribute it.\n");
+          printf ("There is NO WARRANTY, to the extent permitted by law.\n");
           exit (0);
         }
 
@@ -97,7 +104,7 @@ main (int argc, char *argv[])
           {
             memset (modem_device, '\0', sizeof(modem_device));
             strncpy (modem_device, argv[i + 1], sizeof(modem_device)-1);
-            modem_device[i + 1] = '\0';
+            modem_device[(sizeof(modem_device)-1)] = '\0';
           }
         else
           {
