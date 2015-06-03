@@ -69,7 +69,12 @@ main (int argc, char *argv[])
 
       if (!strcmp (argv[i], "-v") || !strcmp (argv[i], "--version"))
         {
-          printf ("ttylog version %s.\n", VERSION);
+          printf ("ttylog version %s\n", VERSION);
+          printf ("Copyright (C) 2015 Robert James Clay <jame@rocasa.us>\n");
+          printf ("Copyright (C) 2002 Tibor Koleszar <oldw@debian.org>\n");
+          printf ("License GPLv2+: <http://www.gnu.org/licenses/old-licenses/gpl-2.0.html>\n");
+          printf ("This is free software: you are free to change and redistribute it.\n");
+          printf ("There is NO WARRANTY, to the extent permitted by law.\n");
           exit (0);
         }
 
