@@ -1,3 +1,10 @@
+ttylog (0.26-1~1) UNRELEASED; urgency=medium
+
+  * New upstream release:
+    - Correct truncating of 'modem_device' string. (Closes: #731086).
+
+ -- Robert James Clay <jame@rocasa.us>  Wed, 03 Jun 2015 13:41:19 -0400
+
 ttylog (0.25-1) unstable; urgency=low
 
   * New upstream release, including:
