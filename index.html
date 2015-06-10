@@ -37,15 +37,21 @@
         by Robert James Clay.
         </p>
 
-        <p>Version <b>v0.25</b> was released in February of 2013.&nbsp;
+        <p>Version <b>v0.26</b> was released in June of 2015.&nbsp;
            (More <a href="http://sourceforge.net/news/?group_id=242744">News</a>.)
         </p>
 
         <table>
-            <caption><u>v0.25 changes</u></caption>
-            <tr><td>* ttylog.c: Corrections to the code adding a NULL to modem_device variable.</td></tr>
-            <tr><td>* CMakeLists.txt: Change CMAKE_C_FLAGS default settings to be Debug build
-                  settings by adding them to CMAKE_C_FLAGS_DEBUG instead.</td></tr>
+            <caption><u>v0.26 changes</u></caption>
+            <tr><td>* ttylog.c: Correct truncating of modem_device string, implementing ttylog
+                  <a href="http://sourceforge.net/p/ttylog/patches/3/">Patch #3</a>
+                 (thanks to Daniel Flinkmann). Closes Debian Bug
+                <a href="https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=731086">#731086</a>.</td></tr>
+            <tr><td>* ttylog.c: Rewrite the "-h|--help" option code, including the expansion
+                  of the "Usage:" line.</td></tr>
+            <tr><td>* ttylog.c: Rewrite the '-v|--version' option code, including the addition
+                  of the License and Copyright information</td></tr>
+            <tr><td>* ttylog.8: Rewrite the '-f --flush' option description in ttylog.8.</td></tr>
         </table>
 
       </div>
