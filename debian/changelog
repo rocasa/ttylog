@@ -2,8 +2,12 @@ ttylog (0.26-1~1) UNRELEASED; urgency=medium
 
   * New upstream release:
     - Correct truncating of 'modem_device' string. (Closes: #731086).
+  * Reformat the long descriptions in debian/control.
+  * Set Debhelper Compatibility and Build-Depends to version 9.
+  * Update copyright years for Robert James Clay in debian/copyright.
+  * Set Standards Version in debian/control to 3.9.6, no changes required.
 
- -- Robert James Clay <jame@rocasa.us>  Wed, 03 Jun 2015 13:41:19 -0400
+ -- Robert James Clay <jame@rocasa.us>  Thu, 11 Jun 2015 02:53:39 -0400
 
 ttylog (0.25-1) unstable; urgency=low
 
@@ -42,14 +46,14 @@ ttylog (0.1.d-1) unstable; urgency=low
   * New upstream release.
   * Set debhelper Build-Depends to version 7.
   * Explicitly set Debian package format as 1.0.
-  * Changed debian/watch to point to Sourceforge. 
+  * Changed debian/watch to point to Sourceforge.
   * Change Maintainer email address to jame@rocasa.us.
   * Set Standards Version to 3.9.1; no changes necessary.
   * Detailed the Debian packaging copyright in debian/copyright.
   * Change homepage in debian/control to Sourceforge project site.
   * Add Vcs-Git & Vcs-Browser to debian/control. (Closes: #566938)
   * Changed to using dh_prep in the install target of debian/rules.
- 
+
  -- Robert James Clay <jame@rocasa.us>  Sat, 26 Mar 2011 14:15:39 -0400
 
 ttylog (0.1.c-1) unstable; urgency=low
@@ -81,7 +85,7 @@ ttylog (0.1.b-4) unstable; urgency=low
 ttylog (0.1.b-3) unstable; urgency=low
 
   * Using optional output flush - Closes: bug#164778
-   
+
  -- Tibor Koleszar <oldw@debian.org>  Sat, 04 Nov 2002 15:18:12 +0200
 
 ttylog (0.1.b-2) unstable; urgency=low
@@ -91,7 +95,7 @@ ttylog (0.1.b-2) unstable; urgency=low
   * Added COPYRIGHT and LICENCE files - Closes: bug#127499
   * Using debhelper instead of debmake - Closes: bug#119600 
   * Its not a debian native package - Closes: bug#127498 
-   
+
  -- Tibor Koleszar <oldw@debian.org>  Sat, 12 Jan 2002 13:21:27 +0200
 
 ttylog (0.1.b-1) unstable; urgency=low
@@ -100,7 +104,7 @@ ttylog (0.1.b-1) unstable; urgency=low
   * Removed binary files from upstream - Closes: bug#127496
   * Added COPYRIGHT and LICENCE files - Closes: bug#127499
   * Using debhelper instead of debmake - Closes: bug#119600 
-   
+
  -- Tibor Koleszar <oldw@debian.org>  Sat, 12 Jan 2002 13:21:27 +0200
 
 ttylog (0.1.a-3) unstable; urgency=low
