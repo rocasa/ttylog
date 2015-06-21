@@ -1,4 +1,4 @@
-ttylog (0.26-1~1) UNRELEASED; urgency=medium
+ttylog (0.26-1) unstable; urgency=medium
 
   * New upstream release:
     - Correct truncating of 'modem_device' string. (Closes: #731086).
@@ -7,7 +7,7 @@ ttylog (0.26-1~1) UNRELEASED; urgency=medium
   * Update copyright years for Robert James Clay in debian/copyright.
   * Set Standards Version in debian/control to 3.9.6, no changes required.
 
- -- Robert James Clay <jame@rocasa.us>  Thu, 11 Jun 2015 02:53:39 -0400
+ -- Robert James Clay <jame@rocasa.us>  Sun, 21 Jun 2015 09:46:01 -0400
 
 ttylog (0.25-1) unstable; urgency=low
 
