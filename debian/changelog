@@ -1,3 +1,9 @@
+ttylog (0.26-1~bpo7+1) wheezy-backports-sloppy; urgency=medium
+
+  * Rebuild for wheezy-backports-sloppy.
+
+ -- Robert James Clay <jame@rocasa.us>  Mon, 28 Dec 2015 16:15:40 -0500
+
 ttylog (0.26-1) unstable; urgency=medium
 
   * New upstream release:
