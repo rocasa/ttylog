@@ -24,6 +24,9 @@
 #include <unistd.h>
 #include <sys/types.h>
 #include <fcntl.h>
+#include <signal.h>
+#include <time.h>
+#include <errno.h>
 
 #define VERSION "0.26"
 #define BAUDN 9
@@ -42,6 +45,10 @@ main (int argc, char *argv[])
   FILE *logfile;
   fd_set rfds;
   int retval, i, j, baud = -1;
+  timer_t timerid;
+  struct sigevent sevp;
+  sevp.sigev_notify = SIGEV_SIGNAL;
+  sevp.sigev_signo = SIGINT;
   int fd;
   char line[1024], modem_device[512];
   struct termios oldtio, newtio;
@@ -60,9 +67,10 @@ main (int argc, char *argv[])
       if (!strcmp (argv[i], "-h") || !strcmp (argv[i], "--help"))
         {
           printf ("ttylog version %s\n", VERSION);
-          printf ("Usage:  ttylog [-b|--baud] [-d|--device] [-f|--flush] > /path/to/logfile\n");
+          printf ("Usage:  ttylog [-b|--baud] [-d|--device] [-f|--flush] [-t|--time] > /path/to/logfile\n");
           printf (" -h, --help	This help\n -v, --version	Version number\n -b, --baud	Baud rate\n");
           printf (" -d, --device	Serial device (eg. /dev/ttyS1)\n -f, --flush	Flush output\n");
+          printf (" -t, --time  Seconds to run\n");
           printf ("ttylog home page: <http://ttylog.sourceforge.net/>\n\n");
           exit (0);
         }
@@ -111,6 +119,26 @@ main (int argc, char *argv[])
           }
       }
 
+  }
+
+  if (!strcmp (argv[i], "-t") || !strcmp (argv[i], "--time")) 
+      {
+        if (timer_create (CLOCK_REALTIME, &sevp, &timerid) == -1)
+          {
+            printf ("Unable to create timer: %s", strerror(errno));
+            exit (0);
+          }
+        struct itimerspec new_value;
+        new_value.it_interval.tv_sec = 0;
+        new_value.it_interval.tv_nsec = 0;
+        new_value.it_value.tv_sec = atoi(argv[i + 1]);
+        new_value.it_value.tv_nsec = 0;
+        if (timer_settime(timerid, 0, &new_value, NULL) == -1)
+          {
+            printf ("Unable to set timer time: %s", strerror(errno));
+            exit (0);
+          }
+      }
   }
 
   if (!strlen(modem_device)) {
