@@ -119,9 +119,7 @@ main (int argc, char *argv[])
           }
       }
 
-  }
-
-  if (!strcmp (argv[i], "-t") || !strcmp (argv[i], "--time")) 
+    if (!strcmp (argv[i], "-t") || !strcmp (argv[i], "--time")) 
       {
         if (timer_create (CLOCK_REALTIME, &sevp, &timerid) == -1)
           {
@@ -139,7 +137,7 @@ main (int argc, char *argv[])
             exit (0);
           }
       }
-  }
+    }
 
   if (!strlen(modem_device)) {
     printf ("%s: no device is set. Use %s -h for more information.\n", argv[0], argv[0]);
