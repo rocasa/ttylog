@@ -32,6 +32,7 @@
 #define BAUDN 9
 
 char flush = 0;
+char raw = '\n';
 
 char *BAUD_T[] =
 {"300", "1200", "2400", "4800", "9600", "19200", "38400", "57600", "115200"};
@@ -70,7 +71,7 @@ main (int argc, char *argv[])
           printf ("Usage:  ttylog [-b|--baud] [-d|--device] [-f|--flush] [-t|--time] > /path/to/logfile\n");
           printf (" -h, --help	This help\n -v, --version	Version number\n -b, --baud	Baud rate\n");
           printf (" -d, --device	Serial device (eg. /dev/ttyS1)\n -f, --flush	Flush output\n");
-          printf (" -t, --timeout  Time to run\n");
+          printf (" -t, --timeout  Time to run\n -r, --raw  Output raw data\n");
           printf ("ttylog home page: <http://ttylog.sourceforge.net/>\n\n");
           exit (0);
         }
@@ -117,6 +118,11 @@ main (int argc, char *argv[])
         else
           {
           }
+      }
+
+    if (!strcmp (argv[i], "-r") || !strcmp (argv[i], "--raw"))
+      {
+        raw = '\0';
       }
 
     if (!strcmp (argv[i], "-t") || !strcmp (argv[i], "--timeout")) 
@@ -176,7 +182,7 @@ main (int argc, char *argv[])
       if (retval)
         {
           fgets (line, 1024, logfile);
-          printf ("%s\n", line);
+          printf ("%s%c", line, raw);
           if (flush) { fflush(stdout); }
         }
     }
