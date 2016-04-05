@@ -70,7 +70,7 @@ main (int argc, char *argv[])
           printf ("Usage:  ttylog [-b|--baud] [-d|--device] [-f|--flush] [-t|--time] > /path/to/logfile\n");
           printf (" -h, --help	This help\n -v, --version	Version number\n -b, --baud	Baud rate\n");
           printf (" -d, --device	Serial device (eg. /dev/ttyS1)\n -f, --flush	Flush output\n");
-          printf (" -t, --time  Seconds to run\n");
+          printf (" -t, --timeout  Time to run\n");
           printf ("ttylog home page: <http://ttylog.sourceforge.net/>\n\n");
           exit (0);
         }
@@ -119,7 +119,7 @@ main (int argc, char *argv[])
           }
       }
 
-    if (!strcmp (argv[i], "-t") || !strcmp (argv[i], "--time")) 
+    if (!strcmp (argv[i], "-t") || !strcmp (argv[i], "--timeout")) 
       {
         if (timer_create (CLOCK_REALTIME, &sevp, &timerid) == -1)
           {
