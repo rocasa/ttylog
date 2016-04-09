@@ -28,7 +28,8 @@
 #include <time.h>
 #include <errno.h>
 
-#define VERSION "0.26"
+#include "config.h"
+
 #define BAUDN 9
 
 char flush = 0;
@@ -67,7 +68,7 @@ main (int argc, char *argv[])
 
       if (!strcmp (argv[i], "-h") || !strcmp (argv[i], "--help"))
         {
-          printf ("ttylog version %s\n", VERSION);
+          printf ("ttylog version %s\n", TTYLOG_VERSION);
           printf ("Usage:  ttylog [-b|--baud] [-d|--device] [-f|--flush] [-t|--time] > /path/to/logfile\n");
           printf (" -h, --help	This help\n -v, --version	Version number\n -b, --baud	Baud rate\n");
           printf (" -d, --device	Serial device (eg. /dev/ttyS1)\n -f, --flush	Flush output\n");
@@ -78,7 +79,7 @@ main (int argc, char *argv[])
 
       if (!strcmp (argv[i], "-v") || !strcmp (argv[i], "--version"))
         {
-          printf ("ttylog version %s\n", VERSION);
+          printf ("ttylog version %s\n", TTYLOG_VERSION);
           printf ("Copyright (C) 2015 Robert James Clay <jame@rocasa.us>\n");
           printf ("Copyright (C) 2002 Tibor Koleszar <oldw@debian.org>\n");
           printf ("License GPLv2+: <http://www.gnu.org/licenses/old-licenses/gpl-2.0.html>\n");

@@ -1,0 +1,13 @@
+/**
+ * Auto-generated configuration header. 
+ * See config.h.in if you need to modify the config.h content.
+ */
+#ifndef _TTYLOG_CONFIG_H_
+#define _TTYLOG_CONFIG_H_
+
+#define TTYLOG_VERSION_MAJOR @TTYLOG_VERSION_MAJOR@
+#define TTYLOG_VERSION_MINOR @TTYLOG_VERSION_MINOR@
+#define TTYLOG_VERSION_PATCH @TTYLOG_VERSION_PATCH@
+#define TTYLOG_VERSION "@TTYLOG_VERSION@"
+
+#endif
