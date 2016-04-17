@@ -72,7 +72,7 @@ main (int argc, char *argv[])
           printf ("Usage:  ttylog [-b|--baud] [-d|--device] [-f|--flush] [-t|--time] > /path/to/logfile\n");
           printf (" -h, --help	This help\n -v, --version	Version number\n -b, --baud	Baud rate\n");
           printf (" -d, --device	Serial device (eg. /dev/ttyS1)\n -f, --flush	Flush output\n");
-          printf (" -t, --timeout  Time to run\n -r, --raw  Output raw data\n");
+          printf (" -r, --raw  Output raw data\n -t, --timeout  Time to run\n");
           printf ("ttylog home page: <http://ttylog.sourceforge.net/>\n\n");
           exit (0);
         }
@@ -99,7 +99,7 @@ main (int argc, char *argv[])
             {
               for (j = 0; j < BAUDN; j++)
                 if (!strcmp (argv[i + 1], BAUD_T[j]))
-                baud = j;
+                  baud = j;
             }
           if (baud == -1)
             {
@@ -128,19 +128,30 @@ main (int argc, char *argv[])
 
     if (!strcmp (argv[i], "-t") || !strcmp (argv[i], "--timeout")) 
       {
+        if (argv[i + 1] == NULL)
+          {
+            printf ("%s: invalid time span %s\n", argv[0], argv[i + 1]);
+            exit(0);
+          }
         if (timer_create (CLOCK_REALTIME, &sevp, &timerid) == -1)
           {
-            printf ("Unable to create timer: %s", strerror(errno));
+            printf ("%s: unable to create timer: %s\n", argv[0], strerror(errno));
             exit (0);
           }
         struct itimerspec new_value;
         new_value.it_interval.tv_sec = 0;
         new_value.it_interval.tv_nsec = 0;
+        int sec = atoi(argv[i + 1]);
+        if (!sec)
+          {
+            printf ("%s: invalid time span %s\n", argv[0], argv[i + 1]);
+            exit(0);
+          }
         new_value.it_value.tv_sec = atoi(argv[i + 1]);
         new_value.it_value.tv_nsec = 0;
         if (timer_settime(timerid, 0, &new_value, NULL) == -1)
           {
-            printf ("Unable to set timer time: %s", strerror(errno));
+            printf ("%s: unable to set timer time: %s\n", argv[0], strerror(errno));
             exit (0);
           }
       }
