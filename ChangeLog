@@ -1,3 +1,10 @@
+2016-5-13  Robert James Clay <jame@rocasa.us>
+
+    * ttylog.c: Remove extraneous character at line 130.
+    * config.h.in: Remove extraneous character at line 3.
+    * ttylog.c: Update the copyright lines for the current authors.
+
+
 2016-4-17  Alexander (MrMontag) Fust <alexander.fust.info@gmail.com>
 
     * ttylog.c: bug-fixes and improvements for the new '-t' & '-r' options.
