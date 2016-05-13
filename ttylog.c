@@ -1,6 +1,7 @@
 /* ttylog - serial port logger
- Copyright (C) 1999-2002  Tibor Koleszar
- Copyright (C) 2008-2015  Robert James Clay
+ Copyright (C) 1999-2002  Tibor Koleszar <oldw@debian.org>
+ Copyright (C) 2008-2016  Robert James Clay <jame@rocasa.us>
+ Copyright (C)      2016  Alexander (MrMontag) Fust <MrMontagOpenDev@gmail.com>
 
  This program is free software; you can redistribute it and/or
  modify it under the terms of the GNU General Public License
