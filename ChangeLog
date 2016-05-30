@@ -1,3 +1,16 @@
+2016-5-30  Robert James Clay <jame@rocasa.us>
+
+    * ttylog.c: Include the changes for ttylog.c from the patch associated with
+      Debian bug # 739733, thus closing the bug. The changes were intended to:
+      - Fix extra newlines being added to output.
+      - Fix dropping of lines at high baud rates.
+      - Fix dropping of first input line.
+      Thanks to Doug Brunner <dbrunner@dbus.com>.
+    * ttylog.c: Update copyright infomation presented by '--version' option.
+    * COPYRIGHT: Update copyright years for jame@rocasa.us and add information
+      for alexander.fust.info@gmail.com.
+
+
 2016-5-25  Alexander (MrMontag) Fust <alexander.fust.info@gmail.com>
 
     * CMakeList.txt: Finalize and activate the CPack directives 
