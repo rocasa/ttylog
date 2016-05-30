@@ -1,3 +1,8 @@
+2016-5-25  Alexander (MrMontag) Fust <alexander.fust.info@gmail.com>
+
+    * CMakeList.txt: Finalize and activate the CPack directives 
+
+
 2016-5-13  Robert James Clay <jame@rocasa.us>
 
     * ttylog.c: Remove extraneous character at line 130.
