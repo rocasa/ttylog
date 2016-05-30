@@ -183,9 +183,15 @@ main (int argc, char *argv[])
   tcsetattr (fd, TCSANOW, &newtio);
 
   /* Clear the device */
-  FD_ZERO (&rfds);
-  FD_SET (fd, &rfds);
-  fgets (line, 1024, logfile);
+  {
+    int flags = fcntl (fd, F_GETFL, 0);
+    fcntl (fd, F_SETFL, flags | O_NONBLOCK);
+    while (fgets (line, 1024, logfile) );
+    fcntl (fd, F_SETFL, flags);
+  }
+
+  if (flush)
+    setbuf(stdout, NULL);
 
   while (1)
     {
@@ -195,7 +201,7 @@ main (int argc, char *argv[])
       if (retval)
         {
           fgets (line, 1024, logfile);
-          printf ("%s%c", line, raw);
+          fputs (line, stdout);
           if (flush) { fflush(stdout); }
         }
     }
