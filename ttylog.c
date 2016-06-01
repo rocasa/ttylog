@@ -125,7 +125,7 @@ main (int argc, char *argv[])
 
     if (!strcmp (argv[i], "-r") || !strcmp (argv[i], "--raw"))
       {
-        raw = '\0';
+        raw = '1';
       }
 
     if (!strcmp (argv[i], "-t") || !strcmp (argv[i], "--timeout"))
