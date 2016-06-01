@@ -202,6 +202,8 @@ main (int argc, char *argv[])
       if (retval)
         {
           fgets (line, 1024, logfile);
+          if (raw)
+            *line++ = '\0';
           fputs (line, stdout);
           if (flush) { fflush(stdout); }
         }
