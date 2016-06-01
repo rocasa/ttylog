@@ -1,12 +1,17 @@
-.TH TTYLOG 8 "2014-07-29" "" ""
+.TH TTYLOG 8 "2016-06-01" "" ""
 .SH NAME
 ttylog \- serial device logger
+.SH SYNOPSIS
+.B ttylog
+[-b|--baud] [-d|--device] [-f|--flush] [-t|--time] > /path/to/logfile
 .SH DESCRIPTION
 This program writes everything comes from a serial device
-from /dev/tty* onto stdout. You can specify device and baud rate
+from /dev/tty* onto stdout. You can specify the device and the baud rate
 of the device.
 .SH OPTIONS
-ttylog follows the GNU command line syntax.
+ttylog follows the GNU command line syntax, with long options
+starting with two dashes('-').
+A summary of options is included below.
 .TP
 .B -h, --help
 Displays a little help
