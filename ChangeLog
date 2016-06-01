@@ -1,8 +1,8 @@
-2016-6-02  Robert James Clay <jame@rocasa.us>
+2016-6-01  Robert James Clay <jame@rocasa.us>
 
-    * ttylog.c: Change the 'raw' variable initialization to "0". Then set it to
-      "1" if the '-r|--raw' option is present on the command line. If it is set,
-      then add a '\0' to the "line" variable before it out.
+    * ttylog.c, ttylog.8: Rewrite description of the '-t|--timeout' option.
+    * ttylog.c: Remove the '-r|--raw' command line option, at least for now.
+    * ttylog.8: Add SYNOPSIS and edit the DESCRIPTION & OPTIONS sections.
 
 
 2016-5-30  Robert James Clay <jame@rocasa.us>
@@ -158,17 +158,17 @@
 
     * Using optional output flush - Closes: Debian bug#164778
 
-   
+
 2002-01-12  Tibor Koleszar <oldw@debian.org>  0.1.b-2
 
     * Its not a debian native package - Closes: Debian bug#127498 
-   
+
 
 2002-01-12  Tibor Koleszar <oldw@debian.org>  0.1.b-1
 
     * Removed binary files from upstream - Closes: Debian bug#127496
     * Added COPYRIGHT and LICENCE files - Closes: Debian bug#127499
-   
+
 
 2001-01-02  Tibor Koleszar <oldw@debian.org>  0.1.a-3
 
