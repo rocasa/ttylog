@@ -1,6 +1,17 @@
+2016-6-03  Robert James Clay <jame@rocasa.us>  0.28
+
+    * Release as ttylog version v0.28.
+
+
+2016-6-02  Robert James Clay <jame@rocasa.us>
+
+    * README.md: Add Usage, Code, Support, and other information.
+    * ttylog.8: Add information to the SYNOPSIS section.
+
+
 2016-6-01  Robert James Clay <jame@rocasa.us>
 
-    * ttylog.c, ttylog.8: Rewrite description of the '-t|--timeout' option.
+    * ttylog.c: ttylog.8: Rewrite description of the '-t|--timeout' option.
     * ttylog.c: Remove the '-r|--raw' command line option, at least for now.
     * ttylog.8: Add SYNOPSIS and edit the DESCRIPTION & OPTIONS sections.
 
@@ -18,7 +29,7 @@
       for alexander.fust.info@gmail.com.
 
 
-2016-5-25  Alexander (MrMontag) Fust <alexander.fust.info@gmail.com>
+2016-5-25  Alexander (MrMontag) Fust <alexander.fust.info@gmail.com>  0.27
 
     * CMakeList.txt: Finalize and activate the CPack directives 
 
