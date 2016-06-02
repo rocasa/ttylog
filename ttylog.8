@@ -1,23 +1,26 @@
-.TH TTYLOG 8 "2016-06-01" "" ""
+.TH TTYLOG 8 "2016-06-02" "" ""
 .SH NAME
 ttylog \- serial device logger
 .SH SYNOPSIS
 .B ttylog
-[-b|--baud] [-d|--device] [-f|--flush] [-t|--time] > /path/to/logfile
+[-b|--baud] [-d|--device] [-f|--flush] [-t|--timeout] > /path/to/logfile
+.PP
+If you are not using the timeout option, you can stop it running by pressing a
+ctrl-c when it's going to the screen or doing "kill -HUP nnnn" (where nnnn is
+the process ID for ttylog) if running in the background.
 .SH DESCRIPTION
-This program writes everything comes from a serial device
-from /dev/tty* onto stdout. You can specify the device and the baud rate
-of the device.
+This program writes everything that comes from a serial device like /dev/ttyS1
+onto stdout. You can specify the device and the baud rate of the device.
 .SH OPTIONS
 ttylog follows the GNU command line syntax, with long options
 starting with two dashes('-').
-A summary of options is included below.
+A summary of the options is included below:
 .TP
 .B -h, --help
 Displays a little help
 .TP
 .B -v, --version
-Version number of ttylog
+Version number of ttylog plus Copyright information
 .TP
 .B -b, --baud
 Baud rate of the device. Available baud rates:
