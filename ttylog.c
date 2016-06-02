@@ -1,6 +1,7 @@
 /* ttylog - serial port logger
- Copyright (C) 1999-2002  Tibor Koleszar
- Copyright (C) 2008-2015  Robert James Clay
+ Copyright (C) 1999-2002  Tibor Koleszar <oldw@debian.org>
+ Copyright (C) 2008-2016  Robert James Clay <jame@rocasa.us>
+ Copyright (C)      2016  Alexander (MrMontag) Fust <MrMontagOpenDev@gmail.com>
 
  This program is free software; you can redistribute it and/or
  modify it under the terms of the GNU General Public License
@@ -24,11 +25,16 @@
 #include <unistd.h>
 #include <sys/types.h>
 #include <fcntl.h>
+#include <signal.h>
+#include <time.h>
+#include <errno.h>
 
-#define VERSION "0.26"
+#include "config.h"
+
 #define BAUDN 9
 
 char flush = 0;
+char raw = '\n';
 
 char *BAUD_T[] =
 {"300", "1200", "2400", "4800", "9600", "19200", "38400", "57600", "115200"};
@@ -42,6 +48,10 @@ main (int argc, char *argv[])
   FILE *logfile;
   fd_set rfds;
   int retval, i, j, baud = -1;
+  timer_t timerid;
+  struct sigevent sevp;
+  sevp.sigev_notify = SIGEV_SIGNAL;
+  sevp.sigev_signo = SIGINT;
   int fd;
   char line[1024], modem_device[512];
   struct termios oldtio, newtio;
@@ -59,17 +69,18 @@ main (int argc, char *argv[])
 
       if (!strcmp (argv[i], "-h") || !strcmp (argv[i], "--help"))
         {
-          printf ("ttylog version %s\n", VERSION);
-          printf ("Usage:  ttylog [-b|--baud] [-d|--device] [-f|--flush] > /path/to/logfile\n");
+          printf ("ttylog version %s\n", TTYLOG_VERSION);
+          printf ("Usage:  ttylog [-b|--baud] [-d|--device] [-f|--flush] [-t|--time] > /path/to/logfile\n");
           printf (" -h, --help	This help\n -v, --version	Version number\n -b, --baud	Baud rate\n");
           printf (" -d, --device	Serial device (eg. /dev/ttyS1)\n -f, --flush	Flush output\n");
+          printf (" -r, --raw  Output raw data\n -t, --timeout  Time to run\n");
           printf ("ttylog home page: <http://ttylog.sourceforge.net/>\n\n");
           exit (0);
         }
 
       if (!strcmp (argv[i], "-v") || !strcmp (argv[i], "--version"))
         {
-          printf ("ttylog version %s\n", VERSION);
+          printf ("ttylog version %s\n", TTYLOG_VERSION);
           printf ("Copyright (C) 2015 Robert James Clay <jame@rocasa.us>\n");
           printf ("Copyright (C) 2002 Tibor Koleszar <oldw@debian.org>\n");
           printf ("License GPLv2+: <http://www.gnu.org/licenses/old-licenses/gpl-2.0.html>\n");
@@ -89,7 +100,7 @@ main (int argc, char *argv[])
             {
               for (j = 0; j < BAUDN; j++)
                 if (!strcmp (argv[i + 1], BAUD_T[j]))
-                baud = j;
+                  baud = j;
             }
           if (baud == -1)
             {
@@ -111,7 +122,41 @@ main (int argc, char *argv[])
           }
       }
 
-  }
+    if (!strcmp (argv[i], "-r") || !strcmp (argv[i], "--raw"))
+      {
+        raw = '\0';
+      }
+
+    if (!strcmp (argv[i], "-t") || !strcmp (argv[i], "--timeout"))
+      {
+        if (argv[i + 1] == NULL)
+          {
+            printf ("%s: invalid time span %s\n", argv[0], argv[i + 1]);
+            exit(0);
+          }
+        if (timer_create (CLOCK_REALTIME, &sevp, &timerid) == -1)
+          {
+            printf ("%s: unable to create timer: %s\n", argv[0], strerror(errno));
+            exit (0);
+          }
+        struct itimerspec new_value;
+        new_value.it_interval.tv_sec = 0;
+        new_value.it_interval.tv_nsec = 0;
+        int sec = atoi(argv[i + 1]);
+        if (!sec)
+          {
+            printf ("%s: invalid time span %s\n", argv[0], argv[i + 1]);
+            exit(0);
+          }
+        new_value.it_value.tv_sec = atoi(argv[i + 1]);
+        new_value.it_value.tv_nsec = 0;
+        if (timer_settime(timerid, 0, &new_value, NULL) == -1)
+          {
+            printf ("%s: unable to set timer time: %s\n", argv[0], strerror(errno));
+            exit (0);
+          }
+      }
+    }
 
   if (!strlen(modem_device)) {
     printf ("%s: no device is set. Use %s -h for more information.\n", argv[0], argv[0]);
@@ -150,7 +195,7 @@ main (int argc, char *argv[])
       if (retval)
         {
           fgets (line, 1024, logfile);
-          printf ("%s\n", line);
+          printf ("%s%c", line, raw);
           if (flush) { fflush(stdout); }
         }
     }

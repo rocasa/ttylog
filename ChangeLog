@@ -1,3 +1,39 @@
+2016-5-25  Alexander (MrMontag) Fust <alexander.fust.info@gmail.com>
+
+    * CMakeList.txt: Finalize and activate the CPack directives 
+
+
+2016-5-13  Robert James Clay <jame@rocasa.us>
+
+    * ttylog.c: Remove extraneous character at line 130.
+    * config.h.in: Remove extraneous character at line 3.
+    * ttylog.c: Update the copyright lines for the current authors.
+
+
+2016-4-17  Alexander (MrMontag) Fust <alexander.fust.info@gmail.com>
+
+    * ttylog.c: bug-fixes and improvements for the new '-t' & '-r' options.
+    * CMakeList.txt: CPack directives deactivated by commenting them out.
+
+
+2016-4-09  Alexander (MrMontag) Fust <alexander.fust.info@gmail.com>
+
+    * CMakeList.txt, config.h.in, ttylog.c: Improve the CMake configuration.
+
+
+2016-4-05  Alexander (MrMontag) Fust <alexander.fust.info@gmail.com>
+
+    * ttylog.c, ttylog.8: New 'raw' option added, as '-r' or '--raw'.
+    * ttylog.c, ttylog.8: Change the '-t' long option from '--time  Seconds to run'
+      to '--timeout  Time to run'.
+
+
+2016-4-04  Alexander (MrMontag) Fust <alexander.fust.info@gmail.com>
+
+    * ttylog.8, ttylog.c: New 'time' option added, as '-t' or '--time'.
+    * CMakeList.txt: Change the setting of C_FLAGS and add CPACK related directives.
+
+
 2015-6-03  Robert James Clay <jame@rocasa.us>  0.26
 
     * ttylog.c: Correct truncating of modem_device string, implementing ttylog
