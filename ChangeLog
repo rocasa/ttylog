@@ -1,4 +1,35 @@
-2016-5-25  Alexander (MrMontag) Fust <alexander.fust.info@gmail.com>
+2016-6-03  Robert James Clay <jame@rocasa.us>  0.28
+
+    * Release as ttylog version v0.28.
+
+
+2016-6-02  Robert James Clay <jame@rocasa.us>
+
+    * README.md: Add Usage, Code, Support, and other information.
+    * ttylog.8: Add information to the SYNOPSIS section.
+
+
+2016-6-01  Robert James Clay <jame@rocasa.us>
+
+    * ttylog.c: ttylog.8: Rewrite description of the '-t|--timeout' option.
+    * ttylog.c: Remove the '-r|--raw' command line option, at least for now.
+    * ttylog.8: Add SYNOPSIS and edit the DESCRIPTION & OPTIONS sections.
+
+
+2016-5-30  Robert James Clay <jame@rocasa.us>
+
+    * ttylog.c: Include the changes for ttylog.c from the patch associated with
+      Debian bug # 739733, thus closing the bug. The changes were intended to:
+      - Fix extra newlines being added to output.
+      - Fix dropping of lines at high baud rates.
+      - Fix dropping of first input line.
+      Thanks to Doug Brunner <dbrunner@dbus.com>.
+    * ttylog.c: Update copyright infomation presented by '--version' option.
+    * COPYRIGHT: Update copyright years for jame@rocasa.us and add information
+      for alexander.fust.info@gmail.com.
+
+
+2016-5-25  Alexander (MrMontag) Fust <alexander.fust.info@gmail.com>  0.27
 
     * CMakeList.txt: Finalize and activate the CPack directives 
 
@@ -138,17 +169,17 @@
 
     * Using optional output flush - Closes: Debian bug#164778
 
-   
+
 2002-01-12  Tibor Koleszar <oldw@debian.org>  0.1.b-2
 
     * Its not a debian native package - Closes: Debian bug#127498 
-   
+
 
 2002-01-12  Tibor Koleszar <oldw@debian.org>  0.1.b-1
 
     * Removed binary files from upstream - Closes: Debian bug#127496
     * Added COPYRIGHT and LICENCE files - Closes: Debian bug#127499
-   
+
 
 2001-01-02  Tibor Koleszar <oldw@debian.org>  0.1.a-3
 

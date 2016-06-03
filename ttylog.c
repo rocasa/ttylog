@@ -34,7 +34,6 @@
 #define BAUDN 9
 
 char flush = 0;
-char raw = '\n';
 
 char *BAUD_T[] =
 {"300", "1200", "2400", "4800", "9600", "19200", "38400", "57600", "115200"};
@@ -70,10 +69,10 @@ main (int argc, char *argv[])
       if (!strcmp (argv[i], "-h") || !strcmp (argv[i], "--help"))
         {
           printf ("ttylog version %s\n", TTYLOG_VERSION);
-          printf ("Usage:  ttylog [-b|--baud] [-d|--device] [-f|--flush] [-t|--time] > /path/to/logfile\n");
+          printf ("Usage:  ttylog [-b|--baud] [-d|--device] [-f|--flush] [-t|--timeout] > /path/to/logfile\n");
           printf (" -h, --help	This help\n -v, --version	Version number\n -b, --baud	Baud rate\n");
           printf (" -d, --device	Serial device (eg. /dev/ttyS1)\n -f, --flush	Flush output\n");
-          printf (" -r, --raw  Output raw data\n -t, --timeout  Time to run\n");
+          printf (" -t, --timeout  How long to run, in seconds.\n");
           printf ("ttylog home page: <http://ttylog.sourceforge.net/>\n\n");
           exit (0);
         }
@@ -81,7 +80,8 @@ main (int argc, char *argv[])
       if (!strcmp (argv[i], "-v") || !strcmp (argv[i], "--version"))
         {
           printf ("ttylog version %s\n", TTYLOG_VERSION);
-          printf ("Copyright (C) 2015 Robert James Clay <jame@rocasa.us>\n");
+          printf ("Copyright (C) 2016 Robert James Clay <jame@rocasa.us>\n");
+          printf ("Copyright (C) 2016 Alexander (MrMontag) Fust <alexander.fust.info@gmail.com>\n");
           printf ("Copyright (C) 2002 Tibor Koleszar <oldw@debian.org>\n");
           printf ("License GPLv2+: <http://www.gnu.org/licenses/old-licenses/gpl-2.0.html>\n");
           printf ("This is free software: you are free to change and redistribute it.\n");
@@ -120,11 +120,6 @@ main (int argc, char *argv[])
         else
           {
           }
-      }
-
-    if (!strcmp (argv[i], "-r") || !strcmp (argv[i], "--raw"))
-      {
-        raw = '\0';
       }
 
     if (!strcmp (argv[i], "-t") || !strcmp (argv[i], "--timeout"))
@@ -183,9 +178,15 @@ main (int argc, char *argv[])
   tcsetattr (fd, TCSANOW, &newtio);
 
   /* Clear the device */
-  FD_ZERO (&rfds);
-  FD_SET (fd, &rfds);
-  fgets (line, 1024, logfile);
+  {
+    int flags = fcntl (fd, F_GETFL, 0);
+    fcntl (fd, F_SETFL, flags | O_NONBLOCK);
+    while (fgets (line, 1024, logfile) );
+    fcntl (fd, F_SETFL, flags);
+  }
+
+  if (flush)
+    setbuf(stdout, NULL);
 
   while (1)
     {
@@ -195,7 +196,7 @@ main (int argc, char *argv[])
       if (retval)
         {
           fgets (line, 1024, logfile);
-          printf ("%s%c", line, raw);
+          fputs (line, stdout);
           if (flush) { fflush(stdout); }
         }
     }
