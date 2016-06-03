@@ -1,9 +1,9 @@
-ttylog (0.26-2) UNRELEASED; urgency=medium
+ttylog (0.28-1~1) UNRELEASED; urgency=medium
 
   * New upstream release:
-    - Correct issues with dropping or adding newlines. (Closes: #739733).
+    - Correct issues with dropping and/or adding newlines. (Closes: #739733).
 
- -- Robert James Clay <jame@rocasa.us>  Thu, 02 Jun 2016 17:09:09 -0400
+ -- Robert James Clay <jame@rocasa.us>  Fri, 03 Jun 2016 12:23:09 -0400
 
 ttylog (0.26-1) unstable; urgency=medium
 
