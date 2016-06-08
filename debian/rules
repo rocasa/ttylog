@@ -17,6 +17,6 @@ override_dh_installdocs:
 	dh_installdocs --link-doc=ttylog
 
 override_dh_strip:
-	dh_strip --dbg-package=ttylog-dbg
+	dh_strip --dbgsym-migration=ttylog-dbg(<< 0.28-1)
 
 .PHONY: override_dh_strip
