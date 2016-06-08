@@ -12,5 +12,6 @@ Package: ttylog
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: serial port logger
- Print everything to stdout that comes from a serial device. You can specify
- the device and the baud rate.
+ Print everything that comes from a serial device to stdout. The device as well
+ as the baud rate can be specified and a timeout can be set instead of just
+ killing the process in order to stop it.
