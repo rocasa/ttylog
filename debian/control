@@ -14,13 +14,3 @@ Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: serial port logger
  Print everything to stdout that comes from a serial device. You can specify
  the device and the baud rate.
-
-Package: ttylog-dbg
-Architecture: any
-Section: debug
-Depends: ttylog (= ${binary:Version}), ${misc:Depends}
-Description: debugging symbols for ttylog
- Print everything to stdout that comes from a serial device. You can specify
- the device and the baud rate.
- .
- This package contains the debugging symbols for ttylog.
