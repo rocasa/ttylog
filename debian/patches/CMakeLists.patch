@@ -1,0 +1,13 @@
+Author: Robert James Clay <jame@rocasa.us>
+Description: Enable DEBUG build in CHamkeList.txt
+Last-Update: 2016-06-08
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -19,6 +19,7 @@
+ )
+ 
+ # ######### Build defaults ##########
++SET(CMAKE_BUILD_TYPE Debug FORCE)
+ SET(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -O2 -lrt")
+ 
+ # ########## ttylog executable ##########
