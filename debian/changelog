@@ -1,9 +1,28 @@
-ttylog (0.28-1~1) UNRELEASED; urgency=medium
+ttylog (0.28-1~2) UNRELEASED; urgency=medium
 
   * New upstream release:
     - Correct issues with dropping and/or adding newlines. (Closes: #739733).
+  * Add debian/patch/CMakeLists.patch to enable a DEBUG build.
+  * Changes to debian/control:
+    - Rewrite the extended Description.
+    - Remove the ttylog-dbg package stanza.
+    - Change the Vcs-Browser URI to 'https'.
+    - Change Standards-Version from '3.9.6' to '3.9.8'.
+  * Changes to debian/copyright:
+    - Update copyright years for Robert James Clay.
+    - Add 'Alexander (MrMontag) Fust' copyright information.
+  * Changes to debian/rules:
+    - Change the dh_strip option being used to 'dbgsym-migration'.
+    - Set the DEB_BUILD_MAINT_OPTIONS varible to 'hardening=+all'.
 
- -- Robert James Clay <jame@rocasa.us>  Fri, 03 Jun 2016 12:23:09 -0400
+ -- Robert James Clay <jame@rocasa.us>  Wed, 08 Jun 2016 23:43:27 -0400
+
+ttylog (0.26-1~deb8u1) stable; urgency=medium
+
+  * Resolve issue in 'jessie' with the truncating of the modem_device string
+    during normal operation of ttylog.
+
+ -- Robert James Clay <jame@rocasa.us>  Wed, 30 Dec 2015 17:47:34 -0500
 
 ttylog (0.26-1) unstable; urgency=medium
 
