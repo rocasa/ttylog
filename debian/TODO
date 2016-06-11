@@ -1,0 +1,11 @@
+ttylog debian/TODO
+
+-------------------------------------------------------------------------------
+  -from build & lintian check in stretch
+I: ttylog source: vcs-field-uses-insecure-uri vcs-git git://git.code.sf.net/p/ttylog/code -b debian
+
+  - However, apparently Sourceforge still does not support that
+  - See also ticket #356 "No anonymous https access to git repos"
+https://sourceforge.net/p/forge/feature-requests/356/
+
+-------------------------------------------------------------------------------
