@@ -1,6 +1,30 @@
 ttylog for Debian
 ----------------------
 
-Print everything onto stdout comes from a serial device.
+Print everything that comes from a serial device to stdout. The device as well
+as the baud rate can be specified and a timeout can be set instead of just
+killing the process in order to stop it. If you are not using the timeout option,
+you can stop it running by pressing a ctrl-c when it's going to the screen, or
+doing "kill -HUP nnnn" if running in the background.
 
-Tibor Koleszar <oldw@debian.org>, Fri,  4 Jun 1999 10:20:26 +0200
+Support
+-------
+
+https://sourceforge.net/p/ttylog/support-requests/
+https://sourceforge.net/p/ttylog/bugs/
+https://sourceforge.net/p/ttylog/patches/
+https://sourceforge.net/p/ttylog/feature-requests/
+https://github.com/rocasa/ttylog/issues
+
+Web sites
+-----------
+
+ttylog website:  http://ttylog.sourceforge.net/
+ttylog project:  https://sourceforge.net/projects/ttylog/
+
+Code
+----
+
+ttylog Git repository:  http://sourceforge.net/p/ttylog/code/
+ttylog at GitHub:  https://github.com/rocasa/ttylog
+
