@@ -19,7 +19,7 @@ INCLUDE_DIRECTORIES(
 )
 
 # ######### Build defaults ##########
-SET(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -O2 -lrt")
+SET(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -O2")
 
 # ########## ttylog executable ##########
 # Sources:
@@ -43,6 +43,11 @@ INCLUDE(CPack)
 
 # actual target:
 ADD_EXECUTABLE(ttylog ${ttylog_executable_SRCS})
+
+# link against librt:
+if(UNIX AND NOT APPLE)
+    target_link_libraries(ttylog rt)
+endif()
 
 # add install targets:
 INSTALL(TARGETS ttylog DESTINATION sbin)
