@@ -3,7 +3,7 @@ PROJECT(ttylog)
 CMAKE_MINIMUM_REQUIRED(VERSION 2.6)
 
 SET(TTYLOG_VERSION_MAJOR "0")
-SET(TTYLOG_VERSION_MINOR "28")
+SET(TTYLOG_VERSION_MINOR "29")
 SET(TTYLOG_VERSION_PATCH "0")
 SET(TTYLOG_VERSION ${TTYLOG_VERSION_MAJOR}.${TTYLOG_VERSION_MINOR}.${TTYLOG_VERSION_PATCH})
 
@@ -19,7 +19,7 @@ INCLUDE_DIRECTORIES(
 )
 
 # ######### Build defaults ##########
-SET(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -O2 -lrt")
+SET(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -O2")
 
 # ########## ttylog executable ##########
 # Sources:
@@ -43,6 +43,11 @@ INCLUDE(CPack)
 
 # actual target:
 ADD_EXECUTABLE(ttylog ${ttylog_executable_SRCS})
+
+# link against librt:
+if(UNIX AND NOT APPLE)
+    target_link_libraries(ttylog rt)
+endif()
 
 # add install targets:
 INSTALL(TARGETS ttylog DESTINATION sbin)

@@ -1,3 +1,8 @@
+2016-6-14 Logan Rosen <loganrosen@gmail.com>
+
+    * CMakeLists.txt: Properly link against librt.
+
+
 2016-6-04  Robert James Clay <jame@rocasa.us>
 
     * README.md: Minor edits to content of file.
