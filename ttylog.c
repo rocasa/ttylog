@@ -2,6 +2,7 @@
  Copyright (C) 1999-2002  Tibor Koleszar <oldw@debian.org>
  Copyright (C) 2008-2016  Robert James Clay <jame@rocasa.us>
  Copyright (C)      2016  Alexander (MrMontag) Fust <MrMontagOpenDev@gmail.com>
+ Copyright (C)      2016  Logan Rosen <loganrosen@gmail.com>
 
  This program is free software; you can redistribute it and/or
  modify it under the terms of the GNU General Public License
@@ -22,6 +23,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <strings.h>
 #include <unistd.h>
 #include <sys/types.h>
 #include <fcntl.h>
@@ -81,11 +83,12 @@ main (int argc, char *argv[])
         {
           printf ("ttylog version %s\n", TTYLOG_VERSION);
           printf ("Copyright (C) 2016 Robert James Clay <jame@rocasa.us>\n");
+          printf ("Copyright (C) 2016 Logan Rosen <loganrosen@gmail.com>\n");
           printf ("Copyright (C) 2016 Alexander (MrMontag) Fust <alexander.fust.info@gmail.com>\n");
           printf ("Copyright (C) 2002 Tibor Koleszar <oldw@debian.org>\n");
           printf ("License GPLv2+: <http://www.gnu.org/licenses/old-licenses/gpl-2.0.html>\n");
           printf ("This is free software: you are free to change and redistribute it.\n");
-          printf ("There is NO WARRANTY, to the extent permitted by law.\n");
+          printf ("There is NO WARRANTY, to the extent permitted by law.\n\n");
           exit (0);
         }
 
@@ -169,10 +172,13 @@ main (int argc, char *argv[])
   tcgetattr (fd, &oldtio);	/* save current serial port settings */
   bzero (&newtio, sizeof (newtio));	/* clear struct for new port settings */
 
-  newtio.c_cflag = BAUD_B[baud] | CRTSCTS | CS8 | CLOCAL | CREAD;
+  newtio.c_cflag = CRTSCTS | CS8 | CLOCAL | CREAD;
   newtio.c_iflag = IGNPAR | IGNCR;
   newtio.c_oflag = 0;
   newtio.c_lflag = ICANON;
+  /* Only truly portable method of setting speed. */
+  cfsetispeed (&newtio, BAUD_B[baud]);
+  cfsetospeed (&newtio, BAUD_B[baud]);
 
   tcflush (fd, TCIFLUSH);
   tcsetattr (fd, TCSANOW, &newtio);

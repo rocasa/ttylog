@@ -1,0 +1,108 @@
+ttylog TODO:
+
+
+
+---------------------------------------------------------------------------
+- Start adding some kind of testing using CTest.
+https://sourceforge.net/p/ttylog/feature-requests/9/
+
+---------------------------------------------------------------------------
+README.md
+  - Use single quotes for the 'kill -HUP nnnn' example
+  - Use markdown to make the lists into bulleted lists (Web Sites and
+    Support and Code).
+  - Put spaces around the "|" char in the Usage line.
+
+---------------------------------------------------------------------------
+- https://sourceforge.net/p/ttylog/feature-requests/8/
+Add functionality to enable the creation of RPM source and binary archives,
+at least starting out with the default (minimal) ones that can be created
+using the CMake functionalty that is available. Reference also:
+
+https://cmake.org/Wiki/CMakeUserUseRPMTools
+https://cmake.org/Wiki/CMake:CPackPackageGenerators
+---------------------------------------------------------------------------
+
+https://sourceforge.net/p/ttylog/bugs/7/
+
+- 14 Feb 2013: in the code parsing the '-d|--device' parameter, an if/else
+    stanza is used to set the modem_device variable if a device is actually
+    listed, also taking care of the issue for if the device name is too long;
+    but the else clause is there but empty.  Is the else clause actually
+    needed?  The first step after the parameter passing and just a few lines
+    later is checking the length of the modem_device name and failing out
+    if "no device is set".  Move that length check to the else clause?  
+    Also; is that "!strcmp" enough?  There are actually three not two
+    possible results to that comparision.
+    -> these also may be resolved by changing to use getopts or getopts long
+    or one of the other commandline parsing libraries
+
+- June 2015: or would it be better to change to using getopts_long()?
+  - there had been at feature request type thing that included an added 
+  option, though the patch they included (on an older version) did not
+  appear to include the code for it.
+
+- this is still present with v0.29 
+- this should error out because of the bad option '--b', when there is
+  only supposed to be '-b' or '--baud' option, but doesn't. This may be
+  resolved but changing to use the standard getopt or the arg_parse
+  (Argp) library. 
+  /usr/sbin/ttylog --b 2400 -d /dev/ttyS0 
+
+http://www.gnu.org/software/libc/manual/html_node/Parsing-Program-Arguments.html
+http://www.gnu.org/software/libc/manual/html_node/Getopt-Long-Option-Example.html
+
+---------------------------------------------------------------------------
+
+  - Looks like I need to work on the hardening issues at the source, as the
+    current pkg build under stretch now results in no hardening related
+    lintian results but it needs more investigation because this shows on
+   Debian Stretch with gcc v5.3.1-21:
+
+$ hardening-check --verbose ttylog
+ttylog:
+ Position Independent Executable: yes
+ Stack protected: no, not found!
+ Fortify Source functions: yes (some protected functions found)
+        unprotected: fgets
+        unprotected: strncpy
+        protected: printf
+        protected: fdelt
+ Read-only relocations: yes
+ Immediate binding: yes
+
+----------------------------------------------------------------------------
+  - https://sourceforge.net/p/ttylog/bugs/8/
+  - June 2016: compile time warnings, found building v0.28 for debian
+/usr/bin/cmake -E cmake_progress_report /tmp/buildd/ttylog-0.28/obj-x86_64-linux-gnu/CMakeFiles 1
+[100%] Building C object CMakeFiles/ttylog.dir/ttylog.c.o
+/usr/bin/cc   -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2 -D_FORTIFY_SOURCE=2  -I/tmp/buildd/ttylog-0.26    -o CMakeFiles
+/ttylog.dir/ttylog.c.o   -c /tmp/buildd/ttylog-0.28/ttylog.c
+/tmp/buildd/ttylog-0.28/ttylog.c: In function 'main':
+
+----------------------------------------------------------------------------
+
+    For v0.3n ?
+- Now have splint installed and a simple 'splint ttylog' results in 
+multiple issues found with the header files.
+- use 'splint' to check the code?
+- had an issue with 'splint', so installed adlint; issues with that as
+well. Need to learn more about either.
+----------------------------------------------------------------------------
+- Change the ttylog.8 file to be an asciidoc source file, then add the
+necessary steps to CMakeLists.txt to get at least the man page from that
+& perhaps also an optional html version doc file as well?
+
+-------------------------------------------------------------------------------
+- Build in Debian Stretch in June 2016 results in the following from Lintian:
+
+  P: ttylog source: debian-watch-may-check-gpg-signature
+
+https://lintian.debian.org/tags/debian-watch-may-check-gpg-signature.html
+
+- Investigate using my GPG key to sign upstream tarball; I already use it
+  to sign the tags in the code repository.
+
+------------------------------------------------------------------------------
+
+
