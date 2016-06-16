@@ -8,7 +8,8 @@ maintained by Robert James Clay.
 
 Information about how to build ttylog can be found in the INSTALL file.
 
-Copyright is GPL-2+, details of which can be found in the COPYRIGHT file.
+Copyright is GPL-2+, details of which can be found in the COPYRIGHT and LICENSE
+files.
 
 
 Usage:
@@ -17,8 +18,8 @@ Usage:
 ttylog [-b|--baud] [-d|--device] [-f|--flush] [-t|--timeout] > /path/to/logfile
 
 If you are not using the timeout option, you can stop it running by pressing a
-ctrl-c when it's going to the screen, or doing "kill -HUP nnnn" if running in
-the background?
+ctrl-c when it's going to the screen or doing "kill -HUP nnnn" if running it in
+the background.
 
 Web sites
 -----------
