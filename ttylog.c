@@ -83,6 +83,7 @@ main (int argc, char *argv[])
         {
           printf ("ttylog version %s\n", TTYLOG_VERSION);
           printf ("Copyright (C) 2016 Robert James Clay <jame@rocasa.us>\n");
+          printf ("Copyright (C) 2016 Logan Rosen <loganrosen@gmail.com>\n");
           printf ("Copyright (C) 2016 Alexander (MrMontag) Fust <alexander.fust.info@gmail.com>\n");
           printf ("Copyright (C) 2002 Tibor Koleszar <oldw@debian.org>\n");
           printf ("License GPLv2+: <http://www.gnu.org/licenses/old-licenses/gpl-2.0.html>\n");
