@@ -23,6 +23,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <strings.h>
 #include <unistd.h>
 #include <sys/types.h>
 #include <fcntl.h>
@@ -170,10 +171,13 @@ main (int argc, char *argv[])
   tcgetattr (fd, &oldtio);	/* save current serial port settings */
   bzero (&newtio, sizeof (newtio));	/* clear struct for new port settings */
 
-  newtio.c_cflag = BAUD_B[baud] | CRTSCTS | CS8 | CLOCAL | CREAD;
+  newtio.c_cflag = CRTSCTS | CS8 | CLOCAL | CREAD;
   newtio.c_iflag = IGNPAR | IGNCR;
   newtio.c_oflag = 0;
   newtio.c_lflag = ICANON;
+  /* Only truly portable method of setting speed. */
+  cfsetispeed (&newtio, BAUD_B[baud]);
+  cfsetospeed (&newtio, BAUD_B[baud]);
 
   tcflush (fd, TCIFLUSH);
   tcsetattr (fd, TCSANOW, &newtio);
