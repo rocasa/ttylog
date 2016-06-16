@@ -1,3 +1,13 @@
+2016-6-16  Robert James Clay <jame@rocasa.us>  0.29
+
+    * COPYRIGHT, ttylog.c: Add copyright information for Logan Rosen.
+    * ttylog.c: Add an extra line feed at the end of the '-v' option printout.
+    * ttylog.c: Implement portability for setting the baud rate. Resolves ticket
+      https://sourceforge.net/p/ttylog/patches/2/. Thanks for the patch goes to
+      Mats Erik Andersson <gnu@gisladisker.se>.
+    * LICENSE: Rename the 'LICENCE' file as 'LICENSE'.
+
+
 2016-6-14 Logan Rosen <loganrosen@gmail.com>
 
     * CMakeLists.txt: Properly link against librt.
