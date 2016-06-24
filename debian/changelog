@@ -1,8 +1,12 @@
-ttylog (0.29-0~1) UNRELEASED; urgency=medium
+ttylog (0.29-1) unstable; urgency=medium
 
   * New upstream release.
+  * Update and refresh debian/patches/CMakeLists.patch for new upstream.
+  * Add the 'debian/docs' file in order to install the upstream TODO file.
+  * Add the 'Logan Rosen <loganrosen@gmail.com>' copyright information to
+    the debian/copyright file.
 
- -- Robert James Clay <jame@rocasa.us>  Thu, 16 Jun 2016 17:14:37 -0400
+ -- Robert James Clay <jame@rocasa.us>  Fri, 24 Jun 2016 15:28:59 -0400
 
 ttylog (0.28-1) unstable; urgency=medium
 
