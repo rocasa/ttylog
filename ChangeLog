@@ -1,3 +1,13 @@
+2017-12-22  Robert James Clay <jame@rocasa.us>  0.30
+
+    * COPYRIGHT, ttylog.c: Add copyright information for Donald Gordon.
+
+
+2016-9-21   Donald Gordon <donald@tawherotech.nz>
+
+    * ttylog.c: Added a timestamp option for output lines.
+
+
 2016-6-16  Robert James Clay <jame@rocasa.us>  0.29
 
     * COPYRIGHT, ttylog.c: Add copyright information for Logan Rosen.
