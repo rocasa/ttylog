@@ -1,6 +1,7 @@
 /* ttylog - serial port logger
  Copyright (C) 1999-2002  Tibor Koleszar <oldw@debian.org>
- Copyright (C) 2008-2016  Robert James Clay <jame@rocasa.us>
+ Copyright (C) 2008-2017  Robert James Clay <jame@rocasa.us>
+ Copyright (C)      2016  Donald Gordon <donald@tawherotech.nz>
  Copyright (C)      2016  Alexander (MrMontag) Fust <MrMontagOpenDev@gmail.com>
  Copyright (C)      2016  Logan Rosen <loganrosen@gmail.com>
 
@@ -48,7 +49,7 @@ main (int argc, char *argv[])
 {
   FILE *logfile;
   fd_set rfds;
-  int retval, i, j, baud = -1;
+  int retval, i, j, baud, stamp = -1;
   timer_t timerid;
   struct sigevent sevp;
   sevp.sigev_notify = SIGEV_SIGNAL;
@@ -56,6 +57,9 @@ main (int argc, char *argv[])
   int fd;
   char line[1024], modem_device[512];
   struct termios oldtio, newtio;
+  time_t rawtime;
+  struct tm *timeinfo;
+  char *timestr;
 
   modem_device[0] = 0;
 
@@ -74,6 +78,7 @@ main (int argc, char *argv[])
           printf ("Usage:  ttylog [-b|--baud] [-d|--device] [-f|--flush] [-t|--timeout] > /path/to/logfile\n");
           printf (" -h, --help	This help\n -v, --version	Version number\n -b, --baud	Baud rate\n");
           printf (" -d, --device	Serial device (eg. /dev/ttyS1)\n -f, --flush	Flush output\n");
+          printf (" -s, --stamp\tPrefix each line with datestamp\n");
           printf (" -t, --timeout  How long to run, in seconds.\n");
           printf ("ttylog home page: <http://ttylog.sourceforge.net/>\n\n");
           exit (0);
@@ -95,6 +100,11 @@ main (int argc, char *argv[])
       if (!strcmp (argv[i], "-f") || !strcmp (argv[i], "--flush"))
         {
           flush = 1;
+        }
+
+      if (!strcmp (argv[i], "-s") || !strcmp (argv[i], "--stamp"))
+        {
+          stamp = 1;
         }
 
       if (!strcmp (argv[i], "-b") || !strcmp (argv[i], "--baud"))
@@ -202,7 +212,17 @@ main (int argc, char *argv[])
       if (retval)
         {
           fgets (line, 1024, logfile);
-          fputs (line, stdout);
+          if (stamp)
+            {
+              time(&rawtime);
+              timeinfo = localtime(&rawtime);
+              timestr = asctime(timeinfo);
+              timestr[strlen(timestr) - 1] = 0;
+              printf ("[%s] %s", timestr, line);
+            } else {
+              fputs (line, stdout);
+            }
+
           if (flush) { fflush(stdout); }
         }
     }
