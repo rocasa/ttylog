@@ -1,8 +1,11 @@
-ttylog (0.30-1~1) UNRELEASED; urgency=medium
+ttylog (0.30-1) unstable; urgency=medium
 
   * New upstream release.
+  * Declare compliance with Debian Policy 4.1.2.
+  * Change the 'Vcs-Git' URL to use HTTPS in debian/control.
+  * Set 'Priority' in debian/control back to 'optional' from 'extra'.
 
- -- Robert James Clay <jame@rocasa.us>  Fri, 22 Dec 2017 23:35:23 -0500
+ -- Robert James Clay <jame@rocasa.us>  Sun, 24 Dec 2017 20:26:13 -0500
 
 ttylog (0.29-1) unstable; urgency=medium
 
