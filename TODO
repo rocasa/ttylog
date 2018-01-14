@@ -3,15 +3,43 @@ ttylog TODO:
 
 
 ---------------------------------------------------------------------------
-- Start adding some kind of testing using CTest.
-https://sourceforge.net/p/ttylog/feature-requests/9/
-
----------------------------------------------------------------------------
 README.md
-  - Use single quotes for the 'kill -HUP nnnn' example
   - Use markdown to make the lists into bulleted lists (Web Sites and
     Support and Code).
-  - Put spaces around the "|" char in the Usage line.
+  - Put spaces around the "|" char in the Usage line?
+
+---------------------------------------------------------------------------
+  - 22 Dec 2017
+
+$ make
+Scanning dependencies of target ttylog
+[ 50%] Building C object CMakeFiles/ttylog.dir/ttylog.c.o
+/home/jame/Projects/ttylog/ttylog.git/ttylog.c: In function ‘main’:
+/home/jame/Projects/ttylog/ttylog.git/ttylog.c:190:31: warning: ‘baud’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+   cfsetispeed (&newtio, BAUD_B[baud]);
+                         ~~~~~~^~~~~~
+[100%] Linking C executable ttylog
+[100%] Built target ttylog
+
+- Yet is that actually true?  Thought it's being initialized to "-1" at
+  line 53?
+
+
+--------------------------------------------------------------------------------
+ 6/26/2016
+-----------
+
+- Error reported in at GH regarding errors related to OS X not having the librt
+library needed for the '-t' option.
+
+https://sourceforge.net/p/ttylog/bugs/9/
+https://github.com/rocasa/ttylog/issues/6
+
+- looks like a work around would be to bypass the '-t' option altogether when
+compiling OS X. Perhaps enclosing the code for the '-t' option with an 'if'
+clause that just prints that the '-t' is not available when the librt library
+is not available.  That way the option is still there but the compile won't
+fail on OS X.  (It's already set not to link on "APPLE".)
 
 ---------------------------------------------------------------------------
 - https://sourceforge.net/p/ttylog/feature-requests/8/
@@ -21,6 +49,9 @@ using the CMake functionalty that is available. Reference also:
 
 https://cmake.org/Wiki/CMakeUserUseRPMTools
 https://cmake.org/Wiki/CMake:CPackPackageGenerators
+
+  - My only need to add it to the 'list' of generators?
+
 ---------------------------------------------------------------------------
 
 https://sourceforge.net/p/ttylog/bugs/7/
@@ -44,10 +75,14 @@ https://sourceforge.net/p/ttylog/bugs/7/
 
 - this is still present with v0.29 
 - this should error out because of the bad option '--b', when there is
-  only supposed to be '-b' or '--baud' option, but doesn't. This may be
+  only supposed to be '-b' or '--baud' option, but doesn't. This may b
   resolved but changing to use the standard getopt or the arg_parse
   (Argp) library. 
   /usr/sbin/ttylog --b 2400 -d /dev/ttyS0 
+
+- Other argument for updating it to use getopts;  the following should
+  fail because there is no '-c' option:
+root@rjcpc:/home/jame/Projects/ttylog/work# ./ttylog -c 4 -b 2400 -d /dev/ttyUSB0
 
 http://www.gnu.org/software/libc/manual/html_node/Parsing-Program-Arguments.html
 http://www.gnu.org/software/libc/manual/html_node/Getopt-Long-Option-Example.html
@@ -103,6 +138,15 @@ https://lintian.debian.org/tags/debian-watch-may-check-gpg-signature.html
 - Investigate using my GPG key to sign upstream tarball; I already use it
   to sign the tags in the code repository.
 
+
+  - this is specific to adding such to a release at github but also notes how to create
+  the sig to begin with
+https://wiki.debian.org/Creating%20signed%20GitHub%20releases
+
+
+  - This is the example given at step 6, which should "give a file called mysoftware-0.4.tar.gz.asc".
+    Although I think I'd need to include something specifiying the key to use.
+
+gpg --armor --detach-sign mysoftware-0.4.tar.gz
+
 ------------------------------------------------------------------------------
-
-
