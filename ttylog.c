@@ -89,7 +89,9 @@ main (int argc, char *argv[])
       if (!strcmp (argv[i], "-v") || !strcmp (argv[i], "--version"))
         {
           printf ("ttylog version %s\n", TTYLOG_VERSION);
-          printf ("Copyright (C) 2016 Robert James Clay <jame@rocasa.us>\n");
+          printf ("Copyright (C) 2018 Robert James Clay <jame@rocasa.us>\n");
+          printf ("Copyright (C) 2018 Guy Shapiro <guy.shapiro@mobi-wize.com>\n");
+          printf ("Copyright (C) 2016 Donald Gordon <donald@tawherotech.nz>\n");
           printf ("Copyright (C) 2016 Logan Rosen <loganrosen@gmail.com>\n");
           printf ("Copyright (C) 2016 Alexander (MrMontag) Fust <alexander.fust.info@gmail.com>\n");
           printf ("Copyright (C) 2002 Tibor Koleszar <oldw@debian.org>\n");
