@@ -44,6 +44,13 @@ INSTALL(TARGETS ttylog DESTINATION sbin)
 # add install man page:
 INSTALL(FILES ttylog.8 DESTINATION share/man/man8)
 
+# ######### Test Settings #########
+include(CTest)
+add_test (ttylogRuns ttylog)
+set_tests_properties (ttylogRuns PROPERTIES PASS_REGULAR_EXPRESSION "no params.")
+add_test (ttylogHelp ttylog -h)
+set_tests_properties (ttylogHelp PROPERTIES PASS_REGULAR_EXPRESSION "Usage:")
+
 # ######### Package creation #########
 SET(CPACK_PACKAGE_VERSION_MAJOR "${TTYLOG_VERSION_MAJOR}")
 SET(CPACK_PACKAGE_VERSION_MINOR "${TTYLOG_VERSION_MINOR}")
