@@ -49,7 +49,8 @@ main (int argc, char *argv[])
 {
   FILE *logfile;
   fd_set rfds;
-  int retval, i, j, baud, stamp = -1;
+  int retval, i, j, baud = -1;
+  int stamp = 0;
   timer_t timerid;
   struct sigevent sevp;
   sevp.sigev_notify = SIGEV_SIGNAL;
