@@ -49,7 +49,8 @@ main (int argc, char *argv[])
 {
   FILE *logfile;
   fd_set rfds;
-  int retval, i, j, baud, stamp = -1;
+  int retval, i, j, baud = -1;
+  int stamp = 0;
   timer_t timerid;
   struct sigevent sevp;
   sevp.sigev_notify = SIGEV_SIGNAL;
@@ -209,9 +210,12 @@ main (int argc, char *argv[])
       FD_ZERO (&rfds);
       FD_SET (fd, &rfds);
       retval = select (fd + 1, &rfds, NULL, NULL, NULL);
-      if (retval)
+      if (retval > 0)
         {
-          fgets (line, 1024, logfile);
+          if (!fgets (line, 1024, logfile))
+            {
+              if (ferror (logfile)) { break; }
+            }
           if (stamp)
             {
               time(&rawtime);
@@ -225,6 +229,7 @@ main (int argc, char *argv[])
 
           if (flush) { fflush(stdout); }
         }
+      else if (retval < 0) { break; }
     }
 
   fclose (logfile);
