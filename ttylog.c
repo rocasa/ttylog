@@ -77,7 +77,7 @@ main (int argc, char *argv[])
       if (!strcmp (argv[i], "-h") || !strcmp (argv[i], "--help"))
         {
           printf ("ttylog version %s\n", TTYLOG_VERSION);
-          printf ("Usage:  ttylog [-b|--baud] [-d|--device] [-f|--flush] [-t|--timeout] > /path/to/logfile\n");
+          printf ("Usage:  ttylog [-b|--baud] [-d|--device] [-f|--flush] [-s|--stamp] [-t|--timeout] > /path/to/logfile\n");
           printf (" -h, --help	This help\n -v, --version	Version number\n -b, --baud	Baud rate\n");
           printf (" -d, --device	Serial device (eg. /dev/ttyS1)\n -f, --flush	Flush output\n");
           printf (" -s, --stamp\tPrefix each line with datestamp\n");
