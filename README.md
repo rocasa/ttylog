@@ -18,7 +18,7 @@ Usage:
 ttylog [-b|--baud] [-d|--device] [-f|--flush] [-t|--timeout] > /path/to/logfile
 
 If you are not using the timeout option, you can stop it running by pressing a
-ctrl-c when it's going to the screen or doing "kill -HUP nnnn" if running it in
+ctrl-c when it's going to the screen or doing 'kill -HUP nnnn' if running it in
 the background.
 
 Web sites
