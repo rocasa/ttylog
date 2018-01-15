@@ -1,3 +1,11 @@
+ttylog (0.31-1~1) UNRELEASED; urgency=medium
+
+  TODO:
+    - Update Debian packaging as necessary for new upstream release.
+  * New upstream release.
+
+ -- Robert James Clay <jame@rocasa.us>  Sun, 14 Jan 2018 22:03:41 -0500
+
 ttylog (0.30-1) unstable; urgency=medium
 
   * New upstream release.
