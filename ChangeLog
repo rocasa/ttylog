@@ -1,6 +1,28 @@
+
+2018-1-14   Robert James Clay <jame@rocasa.us>  0.31
+
+    * README.md: Use single quotes around 'kill -HUP nnnn' example.
+    * README.md, ttylog.c: Add missing '[-s|--stamp]' entry for the Usage line. 
+    * COPYRIGHT, ttylog.c: Add copyright information for Guy Shapiro.
+    * CMakeLists.txt: Change the minimum required version of CMake to '2.8'.
+    * CMakeLists.txt: Add settings for two very basic tests to CMakeLists.txt.
+    * CMakeLists.txt: Move CPack settings to the end of the CMakeLists.txt file.
+    * ttylog.c: Update copyright information for the 'version' option.
+
+
+2018-1-14   Guy Shapiro <guy.shapiro@mobi-wize.com>
+
+    * ttylog.c: Make the timestamp function optional instead of default.
+
+
 2017-12-22  Robert James Clay <jame@rocasa.us>  0.30
 
     * COPYRIGHT, ttylog.c: Add copyright information for Donald Gordon.
+
+
+2017-12-21   Guy Shapiro <guy.shapiro@mobi-wize.com>
+
+    * ttylog.c: exit on unreadable file descriptor
 
 
 2016-9-21   Donald Gordon <donald@tawherotech.nz>

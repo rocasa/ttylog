@@ -1,6 +1,7 @@
 /* ttylog - serial port logger
  Copyright (C) 1999-2002  Tibor Koleszar <oldw@debian.org>
- Copyright (C) 2008-2017  Robert James Clay <jame@rocasa.us>
+ Copyright (C) 2008-2018  Robert James Clay <jame@rocasa.us>
+ Copyright (C) 2017-2018  Guy Shapiro <guy.shapiro@mobi-wize.com>
  Copyright (C)      2016  Donald Gordon <donald@tawherotech.nz>
  Copyright (C)      2016  Alexander (MrMontag) Fust <MrMontagOpenDev@gmail.com>
  Copyright (C)      2016  Logan Rosen <loganrosen@gmail.com>
@@ -76,7 +77,7 @@ main (int argc, char *argv[])
       if (!strcmp (argv[i], "-h") || !strcmp (argv[i], "--help"))
         {
           printf ("ttylog version %s\n", TTYLOG_VERSION);
-          printf ("Usage:  ttylog [-b|--baud] [-d|--device] [-f|--flush] [-t|--timeout] > /path/to/logfile\n");
+          printf ("Usage:  ttylog [-b|--baud] [-d|--device] [-f|--flush] [-s|--stamp] [-t|--timeout] > /path/to/logfile\n");
           printf (" -h, --help	This help\n -v, --version	Version number\n -b, --baud	Baud rate\n");
           printf (" -d, --device	Serial device (eg. /dev/ttyS1)\n -f, --flush	Flush output\n");
           printf (" -s, --stamp\tPrefix each line with datestamp\n");
@@ -88,7 +89,9 @@ main (int argc, char *argv[])
       if (!strcmp (argv[i], "-v") || !strcmp (argv[i], "--version"))
         {
           printf ("ttylog version %s\n", TTYLOG_VERSION);
-          printf ("Copyright (C) 2016 Robert James Clay <jame@rocasa.us>\n");
+          printf ("Copyright (C) 2018 Robert James Clay <jame@rocasa.us>\n");
+          printf ("Copyright (C) 2018 Guy Shapiro <guy.shapiro@mobi-wize.com>\n");
+          printf ("Copyright (C) 2016 Donald Gordon <donald@tawherotech.nz>\n");
           printf ("Copyright (C) 2016 Logan Rosen <loganrosen@gmail.com>\n");
           printf ("Copyright (C) 2016 Alexander (MrMontag) Fust <alexander.fust.info@gmail.com>\n");
           printf ("Copyright (C) 2002 Tibor Koleszar <oldw@debian.org>\n");
